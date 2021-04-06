@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<mat-toolbar>
+
+    <button mat-button routerLink="" id="Title">
+         <div style="color: darkcyan; display:inline; position: relative; top: -1.5px;" >C</div>oach's App
+    </button>
+      
+        <button mat-button class="tabs" [matMenuTriggerFor]="teams">Teams</button>
+            <mat-menu #teams="matMenu">
+            <button mat-menu-item class="tabs" [matMenuTriggerFor]="Alhambra">Alhambra</button>
+            <button mat-menu-item class="tabs" [matMenuTriggerFor]="LakeForest">Lake Forest</button>
+            </mat-menu>
+    
+                <mat-menu #Alhambra="matMenu">
+                    <button mat-menu-item class="tabs">Boys</button>
+                    <button mat-menu-item class="tabs">Girls</button>
+                
+                </mat-menu>
+    
+                <mat-menu #LakeForest="matMenu">
+                    <button mat-menu-item class="tabs">Boys</button>
+                    <button mat-menu-item class="tabs">Girls</button>
+                </mat-menu>
+    
+        <button mat-button class="tabs"[matMenuTriggerFor]="coaches">Coaches</button>
+        <mat-menu #coaches="matMenu">
+        <button mat-menu-item class="tabs" >California</button>
+        <button mat-menu-item class="tabs" >Illinois</button>
+        </mat-menu>
+    
+        <button mat-button class="tabs">Calendar</button>
+    
+    
+    
+    
+      <span class="example-spacer"></span>
+      
+    
+    </mat-toolbar>
