@@ -7,10 +7,15 @@ import { NavbarService } from '../navbar.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-logged:any;
+loggPass(x:boolean){
+    x!=x;
+  }
+  pagedLogged:any;
   constructor(private navigation:NavbarService) { 
+  this.pagedLogged=this.loggPass(navigation.logged);
   
   }
+
 
   ngOnInit(): void {
   }

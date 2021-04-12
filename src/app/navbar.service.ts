@@ -7,5 +7,5 @@ export class NavbarService {
 
   constructor() { }
 
-  
+  logged: boolean= true;
 }

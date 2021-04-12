@@ -5,3 +5,10 @@
     margin-top: 5%;
     
 }
+.header {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main {
+    color: rgb(153, 205, 209);
+}
