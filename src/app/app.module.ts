@@ -12,11 +12,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 
 import {MatMenuModule} from '@angular/material/menu';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AddWorkoutFormComponent } from './add-workout-form/add-workout-form.component';
+import { AddAthleteFormComponent } from './add-athlete-form/add-athlete-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomepageComponent,
+    AddWorkoutFormComponent,
+    AddAthleteFormComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatRippleModule,
     MatMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
