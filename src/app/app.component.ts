@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'workout-schedule';
+
+  type:boolean=true;
+  typeUsr: string= "Athlete"
+
+  changeT(){
+    this.type=!this.type;
+  }
+  changeUrA(){
+    this.typeUsr = "Coach";
+  }
+  changeUrC(){
+    this.typeUsr = "Athlete";
+  }
+
+  
 }

@@ -1,20 +1,18 @@
-<mat-toolbar>
+<mat-toolbar class="test">
 
-    <button mat-button routerLink="" id="Title">
+    <button mat-button routerLink="" id="Title" >
          <div style="color: rgb(204, 138, 81); display:inline; position: relative; top: -1.5px;" >W</div>orkout Scheduler
     </button>
       
-        <button mat-button class="tabs" [matMenuTriggerFor]="teams">Teams</button>
-            <mat-menu #teams="matMenu">
-            <button mat-menu-item class="tabs" >Boys</button>
-            <button mat-menu-item class="tabs" >Girls</button>
-            </mat-menu>
+        <button mat-button class="tabs" routerLink="login">Teams</button>
     
-        <button mat-button class="tabs">Coaches</button>
-           
+        <button mat-button class="tabs" routerLink="loginC">Coaches</button>
+       
+    
         <button mat-button class="tabs">Calendar</button>
        
       <span class="example-spacer"></span>
       
     
     </mat-toolbar>
+  

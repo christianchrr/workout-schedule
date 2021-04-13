@@ -7,3 +7,11 @@
     margin: 10px 40px 0px;
 
 }
+.centered {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+.Header{
+    background-color: rgb(218, 202, 189);
+}
