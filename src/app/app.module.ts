@@ -22,6 +22,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LoginCComponent } from './login-c/login-c.component';
+import { CoachViewComponent } from './coach-view/coach-view.component';
+import { AthleteViewComponent } from './athlete-view/athlete-view.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LoginCComponent } from './login-c/login-c.component';
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-    LoginCComponent
+    LoginCComponent,
+    CoachViewComponent,
+    AthleteViewComponent
   ],
   imports: [
     BrowserModule,
