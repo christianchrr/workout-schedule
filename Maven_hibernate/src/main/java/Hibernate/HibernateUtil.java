@@ -16,9 +16,11 @@ public class HibernateUtil {
 				Configuration configuration = new Configuration(); 
 				Properties settings = new Properties(); 
 				settings.put(Environment.DRIVER, "org.postgresql.Driver");
+
 				settings.put(Environment.URL, "db_url");
 				settings.put(Environment.USER, "db_username"); 
 				settings.put(Environment.PASS, "db_password"); 
+
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
 				settings.put(Environment.SHOW_SQL, "true"); 
 				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread"); 
