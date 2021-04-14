@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Athlete } from '../Models/athlete';
+import { Athlete } from '../../home/Models/athlete';
 
 @Component({
   selector: 'app-add-athlete-form',

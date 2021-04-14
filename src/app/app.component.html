@@ -1,18 +1,29 @@
 <body>
- 
-    <div class="Header"><h1 class="centered"><span style="color: rgb(204, 138, 81);">W</span>orkout Scheduler</h1></div>
-   <div id="body">
-  <div *ngIf="type; then thenBlock else elseBlock"></div>
-  <ng-template #thenBlock>
-      <app-login></app-login>
-      <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Login as Coach</button>
-  </ng-template>
-    <ng-template #elseBlock>
-        <app-login-c></app-login-c>
-        <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Login as Athlete</button>
-    </ng-template>
-  
-  <router-outlet></router-outlet>
-  </div>
 
+  <div *ngIf="loggingIn; then homeBlock else loginBlock"></div>
+
+  <ng-template #loginBlock>
+      <div class="Header">
+        <h1 class="centered"><span style="color: rgb(204, 138, 81);">W</span>orkout Scheduler</h1>
+      </div>
+
+      <div id="body">
+        <div *ngIf="type; then thenBlock else elseBlock"></div>
+
+        <ng-template #thenBlock>
+          <app-login (loginEvent)="loginStatus($event)"></app-login>
+          <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Login as Coach</button>
+        </ng-template>
+
+        <ng-template #elseBlock>
+          <app-login-c (loginEvent)="loginStatus($event)"></app-login-c>
+          <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Login as Athlete</button>
+        </ng-template>
+      </div>
+  </ng-template>
+
+  <ng-template #homeBlock> 
+    <router-outlet></router-outlet>
+  </ng-template>
+  
 </body>

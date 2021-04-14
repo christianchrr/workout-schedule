@@ -21,4 +21,10 @@ export class AppComponent {
     this.typeUsr = "Athlete";
   }
   
+loggingIn:any;
+
+  loginStatus(logStatus:boolean){
+    this.loggingIn = this.loginStatus;
+  }
+  
 }

@@ -1,3 +1,4 @@
+import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Output() loginEvent = new EventEmitter();
+  userLog:boolean=false;
+login(){
+  this.userLog=true;
+  this.loginEvent.emit(this.userLog)
+}
 
 }

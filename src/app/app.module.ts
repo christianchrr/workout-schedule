@@ -11,19 +11,20 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
-import { HomepageComponent } from './homepage/homepage.component';
-import { AddWorkoutFormComponent } from './add-workout-form/add-workout-form.component';
-import { AddAthleteFormComponent } from './add-athlete-form/add-athlete-form.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import { AddWorkoutFormComponent } from './WWPage/add-workout-form/add-workout-form.component';
+import { AddAthleteFormComponent } from './WWPage/add-athlete-form/add-athlete-form.component';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LoginCComponent } from './login-c/login-c.component';
-import { CoachViewComponent } from './coach-view/coach-view.component';
-import { AthleteViewComponent } from './athlete-view/athlete-view.component';
+import { CoachViewComponent } from './home/coach-view/coach-view.component';
+import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AthleteViewComponent } from './athlete-view/athlete-view.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule
+ 
     
   ],
   providers: [],
