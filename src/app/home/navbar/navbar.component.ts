@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../navbar.service';
+import { NavbarService } from '../../navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +11,8 @@ loggPass(x:boolean){
     x!=x;
   }
   pagedLogged:any;
-  constructor(private navigation:NavbarService) { 
-  this.pagedLogged=this.loggPass(navigation.logged);
+  constructor() { 
+  
   
   }
 

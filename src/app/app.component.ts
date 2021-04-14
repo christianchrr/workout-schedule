@@ -19,6 +19,11 @@ export class AppComponent {
   changeUrC(){
     this.typeUsr = "Athlete";
   }
+  
+loggingIn:any;
 
+  loginStatus(logStatus:boolean){
+    this.loggingIn = this.loginStatus;
+  }
   
 }
