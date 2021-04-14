@@ -9,6 +9,7 @@ export class AppComponent {
 
   type:boolean=true;
   typeUsr: string= "Athlete"
+  title: any;
 
   changeT(){
     this.type=!this.type;
@@ -19,6 +20,5 @@ export class AppComponent {
   changeUrC(){
     this.typeUsr = "Athlete";
   }
-
   
 }
