@@ -1,16 +1,16 @@
 <div class="center">
     <h1 class='header'><span class="main">Coaches'</span> Login</h1>
     <form >
-    <div>
-    <mat-form-field>
-        <input matInput type="text" placeholder="Youremail@gmail.com">
-    </mat-form-field>
-    </div>
-    <div>
-    <mat-form-field>
-        <input matInput type="password" placeholder="Password">
-    </mat-form-field>
-    </div>
-  <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>
+        <div>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Email" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" required>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>
     </form>
 </div>

@@ -14,8 +14,10 @@ export class LoginCComponent implements OnInit {
 
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
-login(){
-  this.userLog=true;
-  this.loginEvent.emit(this.userLog)
-}
+
+  login(){
+    this.userLog=true;
+    this.loginEvent.emit(this.userLog)
+  }
+  
 }

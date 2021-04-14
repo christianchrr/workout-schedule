@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "first": "Christian",
+            "last": "C.",
+            "email": "",
+            "phone": "",
+            "type": "Coach"
+        },
+
+        {
+            "id": 2,
+            "first": "David",
+            "last": "C.",
+            "email": "",
+            "phone": "",
+            "type": "Coach"
+        },
+
+        {
+            "id": 3,
+            "first": "Will",
+            "last": "A.",
+            "email": "",
+            "phone": "",
+            "type": "Coach"
+        },
+
+        {
+            "id": 4,
+            "first": "Jun",
+            "last": "",
+            "email": "",
+            "phone": "",
+            "type": "Athlete"
+        }
+
+    ]
+}
