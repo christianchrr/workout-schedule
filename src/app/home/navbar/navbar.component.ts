@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NavbarService } from '../../navbar.service';
 
 @Component({
@@ -20,6 +20,11 @@ loggPass(x:boolean){
   ngOnInit(): void {
   }
   
- 
+  @Output() throughNav = new EventEmitter();
+  userLog:boolean=false;
+
+  login(){
+    this.throughNav.emit(this.userLog)
+  }
 
 }

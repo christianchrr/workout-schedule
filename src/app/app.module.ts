@@ -25,6 +25,9 @@ import { LoginComponent } from './login/login.component';
 import { CoachViewComponent } from './home/coach-view/coach-view.component';
 import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
 
+import { NavbarService } from './navbar.service';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -34,9 +37,9 @@ import { AthleteViewComponent } from './home/athlete-view/athlete-view.component
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-
     CoachViewComponent,
     AthleteViewComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -50,11 +53,12 @@ import { AthleteViewComponent } from './home/athlete-view/athlete-view.component
     BrowserAnimationsModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
  
     
   ],
-  providers: [],
+  providers: [NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
