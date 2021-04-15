@@ -2,9 +2,9 @@
 <div *ngIf="view; then coachView else athleteView"></div>
 <ng-template #coachView>
     <app-coach-view></app-coach-view>
-</ng-template>    
+</ng-template>
+
 <ng-template #athleteView>
-   
-<app-navbar></app-navbar>
-<app-athlete-view></app-athlete-view>
+    <app-navbar></app-navbar>
+    <app-athlete-view></app-athlete-view>
 </ng-template>    

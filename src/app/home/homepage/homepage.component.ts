@@ -12,4 +12,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  view:boolean=true;
+
+
 }
