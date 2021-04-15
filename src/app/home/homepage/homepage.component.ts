@@ -14,5 +14,8 @@ export class HomepageComponent implements OnInit {
 
   view:boolean=true;
 
+  changeView(){
+    this.view = !this.view;
+  }
 
 }
