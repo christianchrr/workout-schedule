@@ -24,6 +24,9 @@ import { LoginComponent } from './login/login.component';
 
 import { CoachViewComponent } from './home/coach-view/coach-view.component';
 import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
+import { MyhttpComponent } from './myhttp/myhttp.component';
+import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,9 +37,10 @@ import { AthleteViewComponent } from './home/athlete-view/athlete-view.component
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-
     CoachViewComponent,
-    AthleteViewComponent
+    AthleteViewComponent,
+    AllAthletesComponent,
+    MyhttpComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +54,8 @@ import { AthleteViewComponent } from './home/athlete-view/athlete-view.component
     BrowserAnimationsModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
- 
-    
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

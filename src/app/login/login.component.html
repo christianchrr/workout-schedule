@@ -4,18 +4,17 @@
         <ng-template #Coach style="display: inline;"><span class="main2">Coaches'</span></ng-template> 
         Login</h1>
     <form >
-    <div>
-    
-    <mat-form-field>
-        <input matInput type="text" placeholder="Youremail@gmail.com">
-    </mat-form-field>
-    </div>
-    <div>
-    <mat-form-field>
-        <input matInput type="password" placeholder="Password">
-    </mat-form-field>
-    </div>
-  <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>
+      <div>   
+        <mat-form-field>
+          <input matInput type="text" placeholder="Youremail@gmail.com">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>     
     </form>
     <br>
     <div *ngIf="type; then AthleteB else CoachB"></div>
