@@ -7,18 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  type:boolean=true;
-  typeUsr: string= "Athlete"
 
-  changeT(){
-    this.type=!this.type;
-  }
-  changeUrA(){
-    this.typeUsr = "Coach";
-  }
-  changeUrC(){
-    this.typeUsr = "Athlete";
-  }
   
 loggingIn:any;
 

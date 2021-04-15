@@ -8,17 +8,9 @@
       </div>
 
       <div id="body">
-        <div *ngIf="type; then thenBlock else elseBlock"></div>
-
-        <ng-template #thenBlock>
+       
           <app-login (loginEvent)="loginStatus($event)"></app-login>
-          <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Login as Coach</button>
-        </ng-template>
 
-        <ng-template #elseBlock>
-          <app-login-c (loginEvent)="loginStatus($event)"></app-login-c>
-          <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Login as Athlete</button>
-        </ng-template>
       </div>
   </ng-template>
 

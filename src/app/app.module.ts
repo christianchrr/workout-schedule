@@ -21,7 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { LoginCComponent } from './login-c/login-c.component';
+
 import { CoachViewComponent } from './home/coach-view/coach-view.component';
 import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
 
@@ -34,7 +34,7 @@ import { AthleteViewComponent } from './home/athlete-view/athlete-view.component
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-    LoginCComponent,
+
     CoachViewComponent,
     AthleteViewComponent
   ],
