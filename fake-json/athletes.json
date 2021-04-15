@@ -3,8 +3,8 @@
         {
             "id": 1,
             "first": "Christian",
-            "last": "C.",
-            "email": "",
+            "last": "Cherry",
+            "email": "christian.cherry@revature.net",
             "phone": "",
             "type": "Coach"
         },
@@ -12,8 +12,8 @@
         {
             "id": 2,
             "first": "David",
-            "last": "C.",
-            "email": "",
+            "last": "Carrillo",
+            "email": "david.carrillo@revature.net",
             "phone": "",
             "type": "Coach"
         },
@@ -21,8 +21,8 @@
         {
             "id": 3,
             "first": "Will",
-            "last": "A.",
-            "email": "",
+            "last": "Alexander",
+            "email": "@will.alexander@revature.net",
             "phone": "",
             "type": "Coach"
         },
@@ -30,8 +30,8 @@
         {
             "id": 4,
             "first": "Jun",
-            "last": "",
-            "email": "",
+            "last": "Lei",
+            "email": "jun.lei@revature.net",
             "phone": "",
             "type": "Athlete"
         }

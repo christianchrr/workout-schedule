@@ -1,1 +1,46 @@
-<p>add-workout-form works!</p>
+<html>
+
+  <head>
+    <style>
+      body {
+        margin: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <app-navbar></app-navbar>
+    <br/>
+
+    <h2>Add Team Member</h2>
+
+    <form #form="ngForm" ngNativeValidate>
+
+      <div class="form-group" style="width: 190px;">
+        <mat-form-field>
+          <input matInput type="text" class="form-control" placeholder="Exercise" name="exercise" required/>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" style="width: 190px;">
+        <mat-form-field>
+          <input matInput type="text" class="form-control" placeholder="" name="" />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" style="width: 190px;">
+        <mat-form-field>
+          <input matInput type="text" class="form-control" placeholder="" name="" />
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="accent" class="btn btn-primary" type="submit">Create Workout</button>
+    
+    </form>
+    {{ form.pristine }}
+    <br/>
+    <!-- Model : {{ workout | json }} -->
+    <br/>
+    Angular : {{ form.value | json }}
+  </body>
+</html>

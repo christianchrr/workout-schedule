@@ -22,11 +22,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
-import { CoachViewComponent } from './home/coach-view/coach-view.component';
-import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
 import { MyhttpComponent } from './myhttp/myhttp.component';
 import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 
 @NgModule({
@@ -37,10 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-    CoachViewComponent,
-    AthleteViewComponent,
     AllAthletesComponent,
-    MyhttpComponent
+    MyhttpComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,
