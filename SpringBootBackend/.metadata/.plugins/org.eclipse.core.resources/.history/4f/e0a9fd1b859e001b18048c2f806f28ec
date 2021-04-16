@@ -1,6 +1,0 @@
-spring.datasource.url=database-1.cfuobkchy8ni.us-east-2.rds.amazonaws.com
-spring.datasource.username=postgres
-spring.datasource.password=postgrespass
-
-spring.jpa.generate-ddl=true
-server.port=8086
