@@ -27,9 +27,6 @@ public class User {
 	@Column(name = "lastname")
 	private String lname; 
 	
-	@Column(name = "phonenumber")
-	private String phone; 
-	
 	@Column(name = "dateofbirth")
 	private String dob;
 
@@ -53,9 +50,6 @@ public class User {
 		return lname;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
 
 	public String getDob() {
 		return dob;
@@ -81,12 +75,16 @@ public class User {
 		this.lname = lname;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public void setDob(String dob) {
 		this.dob = dob;
+	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password + ", role=" + role + ", fname=" + fname + ", lname="
+				+ lname + ", dob=" + dob + "]";
 	} 
+	
+	
 
 }

@@ -22,8 +22,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
-import { CoachViewComponent } from './home/coach-view/coach-view.component';
-import { AthleteViewComponent } from './home/athlete-view/athlete-view.component';
+import { MyhttpComponent } from './myhttp/myhttp.component';
+import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
+
+import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { WeeklyCalendarComponent } from './home/weekly-calendar/weekly-calendar.component';
 
 import { NavbarService } from './navbar.service';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
@@ -37,9 +40,11 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-    CoachViewComponent,
-    AthleteViewComponent
     
+    AllAthletesComponent,
+    MyhttpComponent,
+    ProfileViewComponent,
+    WeeklyCalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -55,8 +60,6 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule
- 
-    
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]
