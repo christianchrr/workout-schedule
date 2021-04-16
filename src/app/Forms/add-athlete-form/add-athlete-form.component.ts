@@ -8,7 +8,7 @@ import { Athlete } from '../../Models/athlete';
 })
 export class AddAthleteFormComponent implements OnInit {
   
-  athlete = new Athlete('', '', '', '')
+  athlete = new Athlete(0,'', '', '', '','')
 
   constructor() { }
 

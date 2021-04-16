@@ -3,26 +3,26 @@
         <ng-template #Athlete style="display: inline;"><span class="main">Athlete's</span></ng-template> 
         <ng-template #Coach style="display: inline;"><span class="main2">Coaches'</span></ng-template> 
         Login</h1>
-    <form >
+    <div >
     <div>
     
     <mat-form-field>
-        <input matInput type="text" placeholder="Youremail@gmail.com">
+        <input matInput type="text" [(ngModel)]="eM" name="eM" placeholder="Youremail@gmail.com" >
     </mat-form-field>
     </div>
     <div>
     <mat-form-field>
-        <input matInput type="password" placeholder="Password">
+        <input matInput type="password" [(ngModel)]="pW" name="pW" placeholder="Password" >
     </mat-form-field>
     </div>
   <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>
-    </form>
+  </div>
     <br>
     <div *ngIf="type; then AthleteB else CoachB"></div>
     <ng-template #AthleteB>
-  <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Login as Athlete</button>
+  <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Change to Athlete</button>
   </ng-template>
   <ng-template #CoachB>
-    <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Login as Coach</button>
+    <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Change to Coach</button>
     </ng-template>
 </div>

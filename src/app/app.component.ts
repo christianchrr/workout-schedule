@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-loggingIn:any;
+loggingIn:any=false;
 
   loginStatus(logStatus:boolean){
-    this.loggingIn = this.loginStatus;
+
+    this.loggingIn = logStatus;
+    console.log(this.loggingIn+" inside appComponent");
   }
   
 }

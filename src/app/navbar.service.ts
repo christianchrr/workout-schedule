@@ -9,7 +9,7 @@ import { Athlete } from './Models/athlete';
 })
 export class NavbarService {
 
-  baseurl = 'http://localhost:3000/users/';
+  baseurl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +19,16 @@ export class NavbarService {
     })
   }
 
-  GetUser(): Observable<Athlete> {
-    return this.http.get<Athlete>(this.baseurl).pipe(
+  GetUserLogin(email:string, password:string): Observable<Athlete>{
+    let userJson= this.http.get<Athlete>(this.baseurl+"?email="+email+"&"+"first="+password)
+    if(userJson!=Object()){
+    console.log(userJson  + " inside getUserLogin Http service")
+  }
+      return userJson
+  }
+
+  GetUser(id:any): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseurl+"/"+id).pipe(
       retry(1),
     catchError(this.errorHandl)
     )

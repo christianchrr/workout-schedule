@@ -2,6 +2,10 @@
 
   <div *ngIf="loggingIn; then homeBlock else loginBlock"></div>
 
+ <ng-template #homeBlock> 
+    <router-outlet></router-outlet>
+  </ng-template>
+
   <ng-template #loginBlock>
       <div class="Header">
         <h1 class="centered"><span style="color: rgb(204, 138, 81);">W</span>orkout Scheduler</h1>
@@ -14,8 +18,5 @@
       </div>
   </ng-template>
 
-  <ng-template #homeBlock> 
-    <router-outlet></router-outlet>
-  </ng-template>
-  
+
 </body>

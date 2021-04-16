@@ -12,7 +12,7 @@ export class HomepageComponent implements OnInit {
   constructor(private testHttp: NavbarService) { }
 athletes: Athlete| any;
   ngOnInit(): void {
-    this.testHttp.GetUser().subscribe(data=>{
+    this.testHttp.GetUser(1).subscribe(data=>{
               this.athletes = data;
     })
   }
