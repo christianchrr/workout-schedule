@@ -1,14 +1,14 @@
 
+<app-navbar></app-navbar>
+<app-weekly-calendar></app-weekly-calendar>
+
 <div *ngIf="view; then coachView else athleteView"></div>
 <ng-template #coachView>
-    <app-navbar></app-navbar>
     <button mat-raised-button color="accent" routerLink="/add-athlete-form" routerLinkActive="active">Add Athlete</button>
     <button mat-raised-button color="accent" routerLink="/add-workout-form" routerLinkActive="active">Add Workout</button>
 </ng-template>
 
 <ng-template #athleteView>
-    <app-navbar></app-navbar>
-</ng-template>    
+</ng-template> 
 
-<button mat-raised-button color="primary" (click)="changeView()">change view</button>
 <button mat-raised-button color="accent" routerLink="/all-athletes" routerLinkActive="active">All Athletes</button>

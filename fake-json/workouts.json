@@ -2,7 +2,8 @@
     "workouts": [
         {
             "id": 1,
-            "exercise": ""
+            "exercise": "",
+            "day": "Sunday"
         },
 
         {

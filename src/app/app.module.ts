@@ -26,6 +26,7 @@ import { MyhttpComponent } from './myhttp/myhttp.component';
 import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { WeeklyCalendarComponent } from './home/weekly-calendar/weekly-calendar.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
     LoginComponent,
     AllAthletesComponent,
     MyhttpComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    WeeklyCalendarComponent
   ],
   imports: [
     BrowserModule,
