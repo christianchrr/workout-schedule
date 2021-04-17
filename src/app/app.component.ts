@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-loggingIn:any=false;
+loggingIn:any=true;
 
   loginStatus(logStatus:boolean){
 

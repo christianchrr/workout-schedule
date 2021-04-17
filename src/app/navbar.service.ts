@@ -9,7 +9,7 @@ import { Athlete } from './Models/athlete';
 })
 export class NavbarService {
 
-  baseurl = 'http://localhost:3000/users';
+  baseurl = 'http://localhost:8086/api/v1/users';
 
   constructor(private http: HttpClient) { }
 
@@ -27,11 +27,13 @@ export class NavbarService {
       return userJson
   }
 
-  GetUser(id:any): Observable<Athlete> {
-    return this.http.get<Athlete>(this.baseurl+"/"+id).pipe(
-      retry(1),
-    catchError(this.errorHandl)
-    )
+  GetUser(email:string): Observable<Athlete> {
+let userJson = this.http.get<Athlete>(this.baseurl+"?email="+email).pipe(
+  retry(1),
+catchError(this.errorHandl)
+);
+    console.log(userJson);
+    return userJson
   }
 
   errorHandl(error:any) {

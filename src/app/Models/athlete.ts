@@ -1,10 +1,10 @@
 export class Athlete {
     constructor(
-        public id: number| null,
+        public email: string,
+        public password:string,
         public firstname: string,
         public lastname: string,
-        public email: string,
         public phone: string,
-        public type: string
+        public role: string
     ){}
 }

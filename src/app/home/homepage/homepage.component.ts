@@ -10,9 +10,9 @@ import { NavbarService } from 'src/app/navbar.service';
 export class HomepageComponent implements OnInit {
 
   constructor(private testHttp: NavbarService) { }
-athletes: Athlete| any;
+athletes: any;
   ngOnInit(): void {
-    this.testHttp.GetUser(1).subscribe(data=>{
+    this.testHttp.GetUser('test@gmail.com').subscribe(data=>{
               this.athletes = data;
     })
   }
