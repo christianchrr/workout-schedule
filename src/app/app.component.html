@@ -1,6 +1,4 @@
-<body>
-
-  <div *ngIf="loggingIn; then homeBlock else loginBlock"></div>
+<div *ngIf="loggingIn; then homeBlock else loginBlock"></div>
 
  <ng-template #homeBlock> 
     <router-outlet></router-outlet>
@@ -10,7 +8,7 @@
       <div class="Header">
         <h1 class="centered"><span style="color: rgb(204, 138, 81);">W</span>orkout Scheduler</h1>
       </div>
-
+   
       <div id="body">
        
           <app-login (loginEvent)="loginStatus($event)"></app-login>
@@ -19,4 +17,4 @@
   </ng-template>
 
 
-</body>
+

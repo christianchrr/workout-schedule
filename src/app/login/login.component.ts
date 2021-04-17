@@ -13,8 +13,10 @@ export class LoginComponent implements OnInit {
 eM:string="";
 pW:string="";
 
+loginWarn:string="";
+
   constructor(private testHttp: NavbarService) { }
-athletes: Athlete | null= null;
+athletes: Array<Athlete>=[];
   ngOnInit(): void {
   }
 
@@ -35,20 +37,29 @@ athletes: Athlete | null= null;
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
 
-
-
-
-
   login(){
-    this.testHttp.GetUserLogin(this.eM, this.pW).subscribe(data=>{
-                    if(data != null){
-                      console.log(typeof(data)+" inside http test");}})
-                   console.log(this.athletes +" inside login()");
-    if(this.athletes!=null){
-    this.userLog=true;
-    this.loginEvent.emit(this.userLog)
-    console.log(this.userLog+" inside loginComponent");
+   this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
+       this.athletes=data;
+      if(this.athletes.length>0){
+        this.userLog=true;
+        this.loginEvent.emit(this.userLog)
+      }
+   })
+  
   }
-  }
+
+
+
+  // login(){
+  //   this.testHttp.GetUserLogin(this.eM, this.pW).subscribe(data=>{
+  //                   if(data != null){
+  //                     console.log(typeof(data)+" inside http test");}})
+  //                  console.log(this.athletes +" inside login()");
+  //   if(this.athletes!=null){
+  //   this.userLog=true;
+  //   this.loginEvent.emit(this.userLog)
+  //   console.log(this.userLog+" inside loginComponent");
+  // }
+  // }
 
 }

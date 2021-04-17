@@ -1,5 +1,6 @@
 package com.revature.Backend.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +22,45 @@ import com.revature.Backend.service.CoachingService;
 @RestController
 @RequestMapping("/api/v1")
 public class CoachingController {
-	
+
 	@Autowired
-	private CoachingService service; 
-	
+	private CoachingService service;
+
 	@GetMapping("/users")
-	public ResponseEntity<List<User>> get() { 
-		List<User> AllUsers = service.findAllUsers(); 
+	public ResponseEntity<List<User>> get() {
+		List<User> AllUsers = service.findAllUsers();
 		return new ResponseEntity<List<User>>(AllUsers, HttpStatus.OK);
 	}
-	
+
 	@PostMapping("/adduser")
-	public ResponseEntity<User> save(@RequestBody User user) { 
-		User athlete = service.addAthlete(user); 
-		return new ResponseEntity<User>(athlete, HttpStatus.OK) ;
+	public ResponseEntity<User> save(@RequestBody User user) {
+		User athlete = service.addAthlete(user);
+		return new ResponseEntity<User>(athlete, HttpStatus.OK);
 	}
-	
-	@GetMapping("/users/{email}")
-	public ResponseEntity<User> get(@PathVariable("email") String email) { 
-		User user = service.findByEmail(email); 
-		return new ResponseEntity<User>(user, HttpStatus.OK) ;
+
+	@GetMapping("/useremail/{email}")
+	public ResponseEntity<User> get(@PathVariable("email") String email) {
+		User user = service.findByEmail(email);
+
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+
 	}
-	
-	@DeleteMapping("/users/{email}")
-	public ResponseEntity<String> delete(@PathVariable("email") String email) { 
+
+	@GetMapping("/login/{email}/{password}")
+	public ResponseEntity<List<User>> get(@PathVariable("email") String email,
+			@PathVariable("password") String password) {
+		User user = service.findByEmail(email);
+		List<User> loginUser = new ArrayList<User>();
+		if (user != null && user.getPassword().equals(password)) {
+			loginUser.add(user);
+		}
+		return new ResponseEntity<List<User>>(loginUser, HttpStatus.OK);
+
+	}
+
+	@DeleteMapping("/email/{email}")
+	public ResponseEntity<String> delete(@PathVariable("email") String email) {
 		service.removeAthlete(email);
-		return new ResponseEntity<String>("Athlete has been removed from roster.", HttpStatus.OK);  
+		return new ResponseEntity<String>("Athlete has been removed from roster.", HttpStatus.OK);
 	}
 }

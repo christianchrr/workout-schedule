@@ -27,8 +27,8 @@ public class User {
 	@Column(name = "lastname")
 	private String lname; 
 	
-	@Column(name = "dateofbirth")
-	private String dob;
+//	@Column(name = "dateofbirth")
+//	private String dob;
 
 	public String getEmail() {
 		return email;
@@ -51,9 +51,9 @@ public class User {
 	}
 
 
-	public String getDob() {
-		return dob;
-	}
+//	public String getDob() {
+//		return dob;
+//	}
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -75,9 +75,9 @@ public class User {
 		this.lname = lname;
 	}
 
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
+//	public void setDob(String dob) {
+//		this.dob = dob;
+//	}
 
 
 	
