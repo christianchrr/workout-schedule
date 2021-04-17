@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../../navbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +7,15 @@ import { NavbarService } from '../../navbar.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-loggPass(x:boolean){
+  loggPass(x:boolean){
     x!=x;
   }
   pagedLogged:any;
-  constructor() { 
-  
-  
-  }
 
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
-  
- 
 
 }
