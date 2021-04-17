@@ -3,7 +3,7 @@
         <ng-template #Athlete style="display: inline;"><span class="main">Athlete's</span></ng-template> 
         <ng-template #Coach style="display: inline;"><span class="main2">Coaches'</span></ng-template> 
         Login</h1>
-    <div >
+    <form >
     <div>
     
     <mat-form-field>
@@ -15,8 +15,8 @@
         <input matInput type="password" [(ngModel)]="pW" name="pW" placeholder="Password" required>
     </mat-form-field>
     </div>
-  <button mat-raised-button color="accent" (click)="login()" routerLink="/homepage">Login</button>
-  </div>
+  <button mat-raised-button color="accent" (click)="login()" (submit)="login()" routerLink="/homepage">Login</button>
+    </form>
     <br>
     <div *ngIf="type; then AthleteB else CoachB"></div>
     <ng-template #AthleteB>
