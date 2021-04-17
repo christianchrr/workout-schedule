@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NavbarService } from '../../navbar.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,24 +7,15 @@ import { NavbarService } from '../../navbar.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-loggPass(x:boolean){
+  loggPass(x:boolean){
     x!=x;
   }
   pagedLogged:any;
-  constructor() { 
-  
-  
-  }
 
+  constructor() { 
+  }
 
   ngOnInit(): void {
-  }
-  
-  @Output() throughNav = new EventEmitter();
-  userLog:boolean=false;
-
-  login(){
-    this.throughNav.emit(this.userLog)
   }
 
 }
