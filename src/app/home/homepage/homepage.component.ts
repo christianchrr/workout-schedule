@@ -12,9 +12,7 @@ export class HomepageComponent implements OnInit {
   constructor(private testHttp: NavbarService) { }
 athletes: any;
   ngOnInit(): void {
-    this.testHttp.GetUser('test@gmail.com').subscribe(data=>{
-              this.athletes = data;
-    })
+  
   }
 
   view:boolean=true;

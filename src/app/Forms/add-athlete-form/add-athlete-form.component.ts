@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from 'src/app/Models/athlete';
 
+
 @Component({
   selector: 'app-add-athlete-form',
   templateUrl: './add-athlete-form.component.html',
@@ -8,7 +9,7 @@ import { Athlete } from 'src/app/Models/athlete';
 })
 export class AddAthleteFormComponent implements OnInit {
   
-  athlete = new Athlete('','', '', '', '','')
+  athlete = new Athlete('','', '', '', '')
 
   constructor() { }
 

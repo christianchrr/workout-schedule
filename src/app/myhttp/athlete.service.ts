@@ -9,7 +9,7 @@ import { Athletes } from './Athletes';
 })
 export class AthleteService {
 
-  baseurl = 'http://localhost:3000/athletes/';
+  baseurl = 'http://localhost:8086/api/v1/';
 
   constructor(private http: HttpClient) { }
    // Http Headers

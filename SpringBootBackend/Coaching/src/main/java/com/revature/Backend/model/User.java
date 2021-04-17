@@ -22,10 +22,10 @@ public class User {
 	private String role;
 	
 	@Column(name = "firstname")
-	private String fname; 
+	private String firstname; 
 	
 	@Column(name = "lastname")
-	private String lname; 
+	private String lastname; 
 	
 //	@Column(name = "dateofbirth")
 //	private String dob;
@@ -43,11 +43,11 @@ public class User {
 	}
 
 	public String getFname() {
-		return fname;
+		return firstname;
 	}
 
 	public String getLname() {
-		return lname;
+		return lastname;
 	}
 
 
@@ -68,11 +68,11 @@ public class User {
 	}
 
 	public void setFname(String fname) {
-		this.fname = fname;
+		this.firstname = fname;
 	}
 
 	public void setLname(String lname) {
-		this.lname = lname;
+		this.lastname = lname;
 	}
 
 //	public void setDob(String dob) {

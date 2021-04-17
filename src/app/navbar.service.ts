@@ -29,13 +29,10 @@ export class NavbarService {
       
     }
 
-  GetUser(email:string): Observable<Athlete> {
-let userJson = this.http.get<Athlete>(this.baseurl+"?email="+email).pipe(
-  retry(1),
-catchError(this.errorHandl)
-);
-    console.log(userJson);
-    return userJson
+  GetUser(): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseurl+"/users")
+   
+     
   }
 
   errorHandl(error:any) {

@@ -41,7 +41,8 @@ public class CoachingController {
 	@GetMapping("/useremail/{email}")
 	public ResponseEntity<User> get(@PathVariable("email") String email) {
 		User user = service.findByEmail(email);
-
+		List<User> loginUser = new ArrayList<User>();
+		loginUser.add(user);
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 
 	}

@@ -9,7 +9,7 @@
         <div *ngIf="throughHere; then cInit else cThrough"></div>
             <ng-template #cInit>
                 coach view goes here
-                {{athletes.email}}
+              
             </ng-template>
             <ng-template #cThrough >
                 <router-outlet></router-outlet>
