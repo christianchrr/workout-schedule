@@ -21,7 +21,7 @@ export class AthleteService {
   
    // GET
    GetAthletes(): Observable<Athletes> {
-    return this.http.get<Athletes>(this.baseurl)
+    return this.http.get<Athletes>(this.baseurl+"role/athlete")
     .pipe(
       retry(1),
       catchError(this.errorHandl)
@@ -29,8 +29,8 @@ export class AthleteService {
   }
 
   // GET
-  GetAthlete(id: any): Observable<Athletes> {
-    return this.http.get<Athletes>(this.baseurl + id)
+  GetCoaches(): Observable<Athletes> {
+    return this.http.get<Athletes>(this.baseurl + "role/coach")
     .pipe(
       retry(1),
       catchError(this.errorHandl)

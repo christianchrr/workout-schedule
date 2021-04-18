@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Athlete } from 'src/app/Models/athlete';
-import { NavbarService } from 'src/app/navbar.service';
+import { AthleteService } from 'src/app/myhttp/athlete.service';
+
 
 @Component({
   selector: 'app-all-athletes',
@@ -10,25 +11,22 @@ import { NavbarService } from 'src/app/navbar.service';
 })
 export class AllAthletesComponent implements OnInit {
 
-  constructor(private _allusers:NavbarService) { }
+  constructor(private _allusers:AthleteService) { }
   athletes: Array<Athlete>=[];
-
- 
+  coaches: Array<Athlete>=[];
+  displayedColumns: String[] = ['role', 'first', 'last', 'email']
  
 
   ngOnInit(): void {
-    this._allusers.GetUser().subscribe((data:any)=>{
-      console.log(data);
+    this._allusers.GetAthletes().subscribe((data:any)=>{
       this.athletes=data;
   })
+    this._allusers.GetCoaches().subscribe((data:any)=>{
+      this.coaches=data;
+    })
   }
 
 
 
 
-  getInfo(){
-    this._allusers.GetUser().subscribe((data:any)=>{
-      console.log(data);
-  })
-  }
 }

@@ -7,5 +7,7 @@ import com.revature.Backend.model.User;
 
 @Repository
 public interface CoachingRepository extends JpaRepository<User, String> {
+	
+	
 
 }

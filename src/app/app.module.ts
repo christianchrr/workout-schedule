@@ -17,6 +17,8 @@ import { AddAthleteFormComponent } from './Forms/add-athlete-form/add-athlete-fo
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
@@ -59,7 +61,9 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]

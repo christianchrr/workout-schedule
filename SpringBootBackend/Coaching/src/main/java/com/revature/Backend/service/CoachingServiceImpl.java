@@ -18,6 +18,8 @@ public class CoachingServiceImpl implements CoachingService {
 	public List<User> findAllUsers() {
 		return repository.findAll();
 	}
+	
+	
 
 	@Override
 	public User addAthlete(User user) {
@@ -39,5 +41,8 @@ public class CoachingServiceImpl implements CoachingService {
 		User removed = findByEmail(email);
 		repository.delete(removed);
 	}
+
+
+
 
 }

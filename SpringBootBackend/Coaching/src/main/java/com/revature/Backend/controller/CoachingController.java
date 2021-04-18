@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,6 +32,19 @@ public class CoachingController {
 		List<User> AllUsers = service.findAllUsers();
 		return new ResponseEntity<List<User>>(AllUsers, HttpStatus.OK);
 	}
+	
+	@GetMapping("/role/{role}")
+	public ResponseEntity<List<User>> getUsersbyRole(@PathVariable("role") String role) {
+		List<User> user = service.findAllUsers();
+		List<User> filteredUsers = new ArrayList<User>();
+		for (User value : user) {
+			if (value.getRole().equals(role)) {
+				filteredUsers.add(value);
+			}
+		}
+		return new ResponseEntity<List<User>>(filteredUsers, HttpStatus.OK);
+	}
+	
 
 	@PostMapping("/adduser")
 	public ResponseEntity<User> save(@RequestBody User user) {

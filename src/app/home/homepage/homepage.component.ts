@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
         this.athlete = this.userTransfer;
-        if(this.athlete[0].role = "Coach"){
+        if(this.athlete[0].role = "coach"){
          
           this.view=false;
        
