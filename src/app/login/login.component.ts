@@ -10,8 +10,8 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="";
-pW:string="";
+eM:string="test@test.com";
+pW:string="password";
 
 loginWarn:string="";
 
@@ -34,8 +34,13 @@ athletes: Array<Athlete>=[];
     this.typeUsr = "Athlete";
     console.log(this.typeUsr);
   }
+
+  
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
+
+
+  @Output() userEvent = new EventEmitter();
 
   login(){
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
@@ -43,6 +48,7 @@ athletes: Array<Athlete>=[];
       if(this.athletes.length>0){
         this.userLog=true;
         this.loginEvent.emit(this.userLog)
+        this.userEvent.emit(this.athletes)
       }
    })
   

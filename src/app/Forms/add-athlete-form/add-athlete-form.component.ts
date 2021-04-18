@@ -18,17 +18,17 @@ export class AddAthleteFormComponent implements OnInit {
 
   firstNameUppercase(value:string) {
     if(value.length > 0) {
-      this.athlete.firstname=value.charAt(0).toUpperCase()+value.slice(1)
+      this.athlete.fname=value.charAt(0).toUpperCase()+value.slice(1)
     } else {
-      this.athlete.firstname = value
+      this.athlete.fname = value
     }
   }
 
   lastNameUppercase(value:string) {
     if(value.length > 0) {
-      this.athlete.lastname=value.charAt(0).toUpperCase()+value.slice(1)
+      this.athlete.lname=value.charAt(0).toUpperCase()+value.slice(1)
     } else {
-      this.athlete.lastname = value
+      this.athlete.lname = value
     }
   }
 

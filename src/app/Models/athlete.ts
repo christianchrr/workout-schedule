@@ -2,8 +2,8 @@ export class Athlete {
     constructor(
         public email: string,
         public password:string,
-        public firstname: string,
-        public lastname: string,
+        public fname: string,
+        public lname: string,
         public role: string
     ){}
 }

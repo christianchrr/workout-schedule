@@ -11,8 +11,6 @@ import { MyhttpComponent } from './myhttp/myhttp.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
-  {path:'homepage', component:HomepageComponent},
   {path:'profile-view', component:ProfileViewComponent},
   {path:'add-athlete-form', component:AddAthleteFormComponent},
   {path:'all-athletes', component:AllAthletesComponent},

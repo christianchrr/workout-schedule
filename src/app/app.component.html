@@ -1,7 +1,7 @@
 <div *ngIf="loggingIn; then homeBlock else loginBlock"></div>
 
  <ng-template #homeBlock> 
-    <router-outlet></router-outlet>
+    <app-homepage [userTransfer]="athlete"></app-homepage>
   </ng-template>
 
   <ng-template #loginBlock>
@@ -11,7 +11,7 @@
    
       <div id="body">
        
-          <app-login (loginEvent)="loginStatus($event)"></app-login>
+          <app-login (loginEvent)="loginStatus($event)" (userEvent)="userStatus($event)"></app-login>
 
       </div>
   </ng-template>

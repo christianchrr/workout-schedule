@@ -1,37 +1,30 @@
 
-<app-navbar></app-navbar>
-<app-weekly-calendar></app-weekly-calendar>
-
 <div *ngIf="view; then coachView else athleteView"></div>
     <ng-template #coachView>
         <app-navbar></app-navbar>
         <div class="displayMargins">
-        <div *ngIf="throughHere; then cInit else cThrough"></div>
-            <ng-template #cInit>
+        
                 coach view goes here
-              
-            </ng-template>
-            <ng-template #cThrough >
+
                 <router-outlet></router-outlet>
-            </ng-template>
+              
+            
         </div>
     </ng-template>
 
     <ng-template #athleteView>
         <app-navbar></app-navbar>
         <div class="displayMargins">
-        <div *ngIf="throughHere; then aInit else aThrough"></div>
-            <ng-template #aInit>
+     
                 athlete View goes here
-            </ng-template>
-            <ng-template #aThrough >
+         
                 <router-outlet></router-outlet>
-            </ng-template>
+            
 
         </div>
     </ng-template>    
 
-<button mat-raised-button color="primary" (click)="changeView()">change view</button>
+
 
 
     <button mat-raised-button color="accent" routerLink="/add-athlete-form" routerLinkActive="active">Add Athlete</button>
@@ -39,4 +32,4 @@
 
 
 
-<button mat-raised-button color="accent" routerLink="/all-athletes" routerLinkActive="active">All Athletes</button>
+
