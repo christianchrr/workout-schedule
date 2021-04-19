@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Athlete } from 'src/app/Models/athlete';
 import { AthleteService } from 'src/app/myhttp/athlete.service';
 
@@ -12,7 +13,7 @@ export class AddAthleteFormComponent implements OnInit {
   
   athlete = new Athlete('','','','password','athlete')
 
-  constructor(private http:AthleteService) { }
+  constructor(private http:AthleteService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +37,7 @@ export class AddAthleteFormComponent implements OnInit {
   submit(){
     this.http.addAthlete(this.athlete).subscribe((data:any)=>{
         this.athlete=data;
+        this.router.navigate(['all-athletes'])
     })
   }
 

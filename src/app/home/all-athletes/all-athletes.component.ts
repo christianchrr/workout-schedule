@@ -21,13 +21,10 @@ export class AllAthletesComponent implements OnInit {
     console.log("ngOnInit");
     this._allusers.GetAthletes().subscribe((data:any)=>{
       this.athletes=data;  
-      console.log(data)    
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
       this.coaches=data;
     })
   }
-
-
 
 }
