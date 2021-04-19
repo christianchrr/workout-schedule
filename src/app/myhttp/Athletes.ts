@@ -3,6 +3,6 @@ export interface Athletes {
         first: string,
         last: string,
         email: string,
-        phone: string,
+        pass: string,
         type: string
 }
