@@ -18,7 +18,7 @@ export class AllAthletesComponent implements OnInit {
  
 
   ngOnInit(): void {
-    console.log("init")
+    console.log("ngOnInit");
     this._allusers.GetAthletes().subscribe((data:any)=>{
       this.athletes=data;  
   })

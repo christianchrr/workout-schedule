@@ -11,7 +11,7 @@ import { AthleteService } from 'src/app/myhttp/athlete.service';
 })
 export class AddAthleteFormComponent implements OnInit {
   
-  athlete = new Athlete('','','','','athlete')
+  athlete = new Athlete('','','','password','athlete')
 
   constructor(private http:AthleteService, private router:Router) { }
 
