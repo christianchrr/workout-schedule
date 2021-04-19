@@ -26,7 +26,7 @@ export class NavbarService {
     this.cachedUser= user;
   }
   getUser(): Array<Athlete>{
-    console.log(this.cachedUser);
+    
     return this.cachedUser;
   }
 
@@ -37,9 +37,6 @@ export class NavbarService {
 
   
   GetUserLogin(email:string, password:string): Observable<Athlete[]>{
-    this.http.get<any>(this.baseurl+"login/"+email+"/"+password).subscribe(data=>{
-      console.log(data);
-    })
       return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)
       
     }

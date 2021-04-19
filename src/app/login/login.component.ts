@@ -28,7 +28,6 @@ athletes: any;
 
   login(){
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe(data=>{
-     console.log(data);
        this.athletes=data;
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);

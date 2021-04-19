@@ -24,7 +24,7 @@ export class AllAthletesComponent implements OnInit {
 
   ngOnInit(): void {
     this._allusers.GetAthletes().subscribe((data:any)=>{
-      console.log(data)
+     
       this.athletes=data;  
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{

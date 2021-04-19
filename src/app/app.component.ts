@@ -30,7 +30,7 @@ athlete: Array<Athlete> = [];
 
 
   userStatus(userEvent:Array<Athlete>){
-    console.log(userEvent);
+    
     this.athlete = userEvent;
   }
 
