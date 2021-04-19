@@ -57,7 +57,7 @@ public class EmailSender {
         Context context = new Context();
         context.setVariables(model);
         String html = templateEngine.process("email-template", context);
-
+        	
         try {
             helper.setTo(user.getEmail());
             helper.setText(html,true);
