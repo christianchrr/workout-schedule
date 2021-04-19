@@ -18,10 +18,8 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
         this.athlete = this.userTransfer;
-        if(this.athlete[0].role = "coach"){
-         
-          this.view=false;
-       
+        if(this.athlete[0].role = "coach"){        
+          this.view=false;     
         }
   }
 

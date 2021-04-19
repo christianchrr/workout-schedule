@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Athlete } from '../Models/athlete';
 import { AthleteService } from './athlete.service';
-import { Athletes } from './Athletes';
 
 @Component({
   selector: 'app-myhttp',
@@ -10,7 +10,7 @@ import { Athletes } from './Athletes';
 export class MyhttpComponent implements OnInit {
 
   constructor(private athleteService : AthleteService){}
-  athletes : Athletes | any;
+  athletes : Athlete | any;
   ngOnInit(){
       this.athleteService.GetAthletes()
           .subscribe(data =>{
