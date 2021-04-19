@@ -1,6 +1,7 @@
 
+<div class="center">
 <h3>{{fname}} {{lname}}</h3>
-<div>{{role}}</div>
+<div>Your Role: {{role}}</div>
 <div *ngIf="changeInfoView, then form else button"></div>
 <ng-template #button>
 <button mat-raised-button color="accent" (click)="changeInfo()">Change Profile Info</button>
@@ -25,6 +26,8 @@
     </div>
 
   <button mat-raised-button color="accent" (click)="update()">Update</button>
-  <button mat-raised-button color="accent" (click)="changeInfo()">Cancel</button>
-    </form>
+</form>
+<br>
+<button mat-raised-button color="accent" (click)="changeInfo()" >Cancel</button>
     </ng-template>
+</div>
