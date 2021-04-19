@@ -10,32 +10,16 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="david.carrillo@revature.net";
-pW:string="coachpass";
+eM:string="tevin.gray@revature.net";
+pW:string="password";
 
 loginWarn:string="";
 
   constructor(private testHttp: NavbarService) { }
-athletes: Array<Athlete>=[];
+athletes: any;
   ngOnInit(): void {
   }
 
-
-  type:boolean=true;
-  typeUsr: string= "Athlete"
-
-  changeT(){
-    this.type=!this.type;
-  }
-  changeUrA(){
-    this.typeUsr = "Coach";
-  }
-  changeUrC(){
-    this.typeUsr = "Athlete";
-    console.log(this.typeUsr);
-  }
-
-  
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
 
@@ -43,7 +27,8 @@ athletes: Array<Athlete>=[];
   @Output() userEvent = new EventEmitter();
 
   login(){
-   this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
+   this.testHttp.GetUserLogin(this.eM,this.pW).subscribe(data=>{
+     console.log(data);
        this.athletes=data;
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);
@@ -57,16 +42,5 @@ athletes: Array<Athlete>=[];
 
 
 
-  // login(){
-  //   this.testHttp.GetUserLogin(this.eM, this.pW).subscribe(data=>{
-  //                   if(data != null){
-  //                     console.log(typeof(data)+" inside http test");}})
-  //                  console.log(this.athletes +" inside login()");
-  //   if(this.athletes!=null){
-  //   this.userLog=true;
-  //   this.loginEvent.emit(this.userLog)
-  //   console.log(this.userLog+" inside loginComponent");
-  // }
-  // }
 
 }

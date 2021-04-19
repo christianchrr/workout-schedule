@@ -4,7 +4,7 @@
 <div>Your Role: {{role}}</div>
 <div *ngIf="changeInfoView, then form else button"></div>
 <ng-template #button>
-<button mat-raised-button color="accent" (click)="changeInfo()">Change Profile Info</button>
+<button mat-raised-button color="accent" (click)="changeInfo()">Edit Info</button>
 </ng-template>
 
 <ng-template #form>

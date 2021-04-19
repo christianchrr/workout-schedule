@@ -1,6 +1,5 @@
 
-<div *ngIf="view; then coachView else athleteView"></div>
-    <ng-template #coachView>
+
         <app-navbar></app-navbar>
         <div class="displayMargins">
         
@@ -10,20 +9,7 @@
               
             
         </div>
-    </ng-template>
-
-    <ng-template #athleteView>
-        <app-navbar></app-navbar>
-        <div class="displayMargins">
-     
-                athlete View goes here
-         
-                <router-outlet></router-outlet>
-            
-
-        </div>
-    </ng-template>    
-
+    
 
 
 

@@ -26,7 +26,7 @@ export class WorkoutViewComponent implements OnInit {
 
     this.user = this._user.getUser()[0];
 
-    if(this.user.role="coach"){
+    if(this.user.role=="coach"){
       this.userIsCoach = true;
     }
   }
