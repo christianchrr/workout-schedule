@@ -47,15 +47,9 @@ export class AthleteService {
     )
   }
 
-
-
-
-
-
-
-
-
-
+  addAthlete(user: object): Observable<object> {
+    return this.http.post(this.baseurl+"adduser", user)   
+  }
 
   // Error handling
   errorHandl(error: any) {
