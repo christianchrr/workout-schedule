@@ -10,8 +10,8 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="ng";
-pW:string="password";
+eM:string="david.carrillo@revature.net";
+pW:string="coachpass";
 
 loginWarn:string="";
 

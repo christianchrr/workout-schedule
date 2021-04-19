@@ -40,11 +40,9 @@ export class NavbarService {
       
     }
 
-
-
-
-
-
+  GetUser(): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseurl+"/users")   
+  }
 
   errorHandl(error:any) {
     let errorMessage = '';
