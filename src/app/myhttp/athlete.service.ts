@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Athletes } from './Athletes';
+import { Athlete } from '../Models/athlete';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class AthleteService {
   }
   
    // GET
-   GetAthletes(): Observable<Athletes> {
-    return this.http.get<Athletes>(this.baseurl+"role/athlete")
+   GetAthletes(): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseurl+"role/athlete")
     .pipe(
       retry(1),
       catchError(this.errorHandl)
@@ -29,13 +30,32 @@ export class AthleteService {
   }
 
   // GET
-  GetCoaches(): Observable<Athletes> {
-    return this.http.get<Athletes>(this.baseurl + "role/coach")
+  GetCoaches(): Observable<Athlete> {
+    return this.http.get<Athlete>(this.baseurl + "role/coach")
     .pipe(
       retry(1),
       catchError(this.errorHandl)
     )
   }
+
+  UpdateUser(newUser:object): Observable<Athlete> {
+    console.log(newUser);
+    console.log(this.baseurl+"adduser");
+   
+    return this.http.put<Athlete>(this.baseurl+"updateuser",newUser).pipe(
+      catchError(this.errorHandl)
+    )
+  }
+
+
+
+
+
+
+
+
+
+
 
   // Error handling
   errorHandl(error: any) {
