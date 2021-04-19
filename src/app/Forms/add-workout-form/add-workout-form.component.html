@@ -13,19 +13,19 @@
 
     <form #form="ngForm" ngNativeValidate>
 
-      <div class="form-group" style="width: 190px;">
+      <div class="form-group" style="width: 200px;">
         <mat-form-field>
           <input matInput type="text" class="form-control" placeholder="Exercise" name="exercise" required/>
         </mat-form-field>
       </div>
 
-      <div class="form-group" style="width: 190px;">
+      <div class="form-group" style="width: 200px;">
         <mat-form-field>
           <input matInput type="text" class="form-control" placeholder="" name="" />
         </mat-form-field>
       </div>
 
-      <div class="form-group" style="width: 190px;">
+      <div class="form-group" style="width: 200px;">
         <mat-form-field>
           <input matInput type="text" class="form-control" placeholder="" name="" />
         </mat-form-field>
@@ -34,10 +34,5 @@
       <button mat-raised-button color="accent" class="btn btn-primary" type="submit">Create Workout</button>
     
     </form>
-    {{ form.pristine }}
-    <br/>
-    <!-- Model : {{ workout | json }} -->
-    <br/>
-    Angular : {{ form.value | json }}
   </body>
 </html>
