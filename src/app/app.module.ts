@@ -32,6 +32,7 @@ import { WeeklyCalendarComponent } from './home/weekly-calendar/weekly-calendar.
 
 import { NavbarService } from './navbar.service';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { WorkoutViewComponent } from './home/workout-view/workout-view.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     AllAthletesComponent,
     MyhttpComponent,
     ProfileViewComponent,
-    WeeklyCalendarComponent
+    WeeklyCalendarComponent,
+    WorkoutViewComponent
   ],
   imports: [
     BrowserModule,
