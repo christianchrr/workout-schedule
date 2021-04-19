@@ -20,6 +20,7 @@ export class ProfileViewComponent implements OnInit {
   fname:string=this.user.fname; 
   lname:string=this.user.lname; 
   password:string=this.user.password;
+  role:string = this.user.role;
 
   ngOnInit(): void {
     this.user = this._user.getUser()[0];
@@ -28,8 +29,14 @@ export class ProfileViewComponent implements OnInit {
     this.fname=this.user.fname; 
     this.lname=this.user.lname; 
     this.password=this.user.password;
+    this.role = this.user.role;
   }
-      
+  
+  changeInfoView:boolean=false;
+
+  changeInfo(){
+    this.changeInfoView = !this.changeInfoView;
+  }
 
   update(){
     this.user = {email:this.email,fname:this.fname,lname:this.lname,password:this.password,role:this.user.role}

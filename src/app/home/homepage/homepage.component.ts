@@ -17,12 +17,12 @@ export class HomepageComponent implements OnInit {
   view:boolean=false;
 
   ngOnInit(): void {
-        this.athlete = this.userTransfer;
-        if(this.athlete[0].role = "coach"){
+        // this.athlete = this.userTransfer;
+        // if(this.athlete[0].role == "coach"){
          
-          this.view=false;
+        //   this.view=false;
        
-        }
+        // }
   }
 
 

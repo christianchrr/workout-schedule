@@ -1,7 +1,5 @@
 <div class="center">
-    <h1 class="header"><span *ngIf="type; then Athlete else Coach"></span>
-        <ng-template #Athlete style="display: inline;"><span class="main">Athlete's</span></ng-template> 
-        <ng-template #Coach style="display: inline;"><span class="main2">Coaches'</span></ng-template> 
+    <h1 class="header">
         Login</h1>
     <form >
     <div>
@@ -17,12 +15,6 @@
     </div>
   <button mat-raised-button color="accent" (click)="login()" (submit)="login()" routerLink="/homepage">Login</button>
     </form>
-    <br>
-    <div *ngIf="type; then AthleteB else CoachB"></div>
-    <ng-template #AthleteB>
-  <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrA()'>Change to Athlete</button>
-  </ng-template>
-  <ng-template #CoachB>
-    <button mat-raised-button class="centered" color="accent" (click)='changeT(); changeUrC()'>Change to Coach</button>
-    </ng-template>
+
+    
 </div>

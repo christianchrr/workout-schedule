@@ -1,6 +1,5 @@
 
-<div *ngIf="view; then coachView else athleteView"></div>
-    <ng-template #coachView>
+
         <app-navbar></app-navbar>
         <div class="displayMargins">
         
@@ -10,26 +9,9 @@
               
             
         </div>
-    </ng-template>
-
-    <ng-template #athleteView>
-        <app-navbar></app-navbar>
-        <div class="displayMargins">
-     
-                athlete View goes here
-         
-                <router-outlet></router-outlet>
-            
-
-        </div>
-    </ng-template>    
+    
 
 
 
-
-    <button mat-raised-button color="accent" routerLink="/add-athlete-form" routerLinkActive="active">Add Athlete</button>
-    <button mat-raised-button color="accent" routerLink="/add-workout-form" routerLinkActive="active">Add Workout</button>
-
-
-
-
+    
+    

@@ -1,5 +1,14 @@
 
-<form >
+<div class="center">
+<h3>{{fname}} {{lname}}</h3>
+<div>Your Role: {{role}}</div>
+<div *ngIf="changeInfoView, then form else button"></div>
+<ng-template #button>
+<button mat-raised-button color="accent" (click)="changeInfo()">Edit Info</button>
+</ng-template>
+
+<ng-template #form>
+    <form>
     <div>
     <mat-form-field>
         <input matInput type="text" [(ngModel)]="fname" name="fname">
@@ -11,17 +20,14 @@
     </mat-form-field>
     </div>
     <div>
-        <mat-form-field>
-            <input matInput type="text" [(ngModel)]="email" name="email">
-        </mat-form-field>
-    </div>
-    <div>
     <mat-form-field>
         <input matInput type="password" [(ngModel)]="password" name="password">
     </mat-form-field>
     </div>
 
   <button mat-raised-button color="accent" (click)="update()">Update</button>
-    </form>
-
-    {{user | json}}
+</form>
+<br>
+<button mat-raised-button color="accent" (click)="changeInfo()" >Cancel</button>
+    </ng-template>
+</div>

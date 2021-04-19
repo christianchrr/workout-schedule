@@ -38,7 +38,7 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-
+        
 
 </mat-tab>
     <mat-tab label="Coaches"> 
@@ -77,4 +77,6 @@
     </mat-tab>
   
   </mat-tab-group>
+  <br>
   
+  <button *ngIf="userIsCoach" mat-raised-button color="accent" routerLink="/add-athlete-form" routerLinkActive="active">Add an Athlete</button>

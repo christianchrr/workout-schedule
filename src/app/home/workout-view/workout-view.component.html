@@ -18,3 +18,8 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table> 
+<br>
+        <button *ngIf="userIsCoach" mat-raised-button color="accent" routerLink="/add-workout-form" routerLinkActive="active">Add Workout</button>
+
+
+
