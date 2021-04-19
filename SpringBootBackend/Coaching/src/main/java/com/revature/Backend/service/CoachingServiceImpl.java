@@ -21,7 +21,6 @@ public class CoachingServiceImpl implements CoachingService {
 	}
 	
 	
-
 	@Override
 	public User addAthlete(User user) {
 		repository.save(user);
@@ -54,6 +53,10 @@ public class CoachingServiceImpl implements CoachingService {
 		User removed = findByEmail(email);
 		repository.delete(removed);
 	}
+	
+	
+	
+	
 
 
 
