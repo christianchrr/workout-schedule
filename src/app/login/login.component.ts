@@ -10,7 +10,7 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="test@test.com";
+eM:string="ng";
 pW:string="password";
 
 loginWarn:string="";
@@ -46,6 +46,7 @@ athletes: Array<Athlete>=[];
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
        this.athletes=data;
       if(this.athletes.length>0){
+        this.testHttp.setUser(this.athletes);
         this.userLog=true;
         this.loginEvent.emit(this.userLog)
         this.userEvent.emit(this.athletes)

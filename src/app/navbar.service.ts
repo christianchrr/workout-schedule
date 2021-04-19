@@ -19,6 +19,17 @@ export class NavbarService {
     })
   }
 
+
+  private cachedUser: Array<Athlete>=[];
+
+  setUser(user: Array<Athlete>){
+    this.cachedUser= user;
+  }
+  getUser(): Array<Athlete>{
+    return this.cachedUser;
+  }
+
+
   getStuff(): Observable<Athlete>{
     return this.http.get<any>(this.baseurl+'users');
   }
@@ -29,11 +40,11 @@ export class NavbarService {
       
     }
 
-  GetUser(): Observable<Athlete> {
-    return this.http.get<Athlete>(this.baseurl+"/users")
-   
-     
-  }
+
+
+
+
+
 
   errorHandl(error:any) {
     let errorMessage = '';

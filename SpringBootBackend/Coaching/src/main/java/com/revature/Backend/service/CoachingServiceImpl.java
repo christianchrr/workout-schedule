@@ -1,6 +1,7 @@
 package com.revature.Backend.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,18 @@ public class CoachingServiceImpl implements CoachingService {
 		repository.save(user);
 		return user; 
 	}
+	
+
+	@Override
+	public User updateAthlete(User user) {
+		User FoundUser = repository.findById(user.getEmail()).get();
+		FoundUser.setFname(user.getFname());
+		FoundUser.setLname(user.getLname());
+		FoundUser.setPassword(user.getPassword());
+		FoundUser.setRole(user.getRole());
+		return repository.save(FoundUser);
+	}
+	
 
 	@Override
 	public User findByEmail(String email) {
@@ -41,6 +54,9 @@ public class CoachingServiceImpl implements CoachingService {
 		User removed = findByEmail(email);
 		repository.delete(removed);
 	}
+
+
+
 
 
 

@@ -15,7 +15,7 @@ public interface CoachingService {
 	
 	void removeAthlete(String email);
 
-
+	public User updateAthlete(User user);
 
 
 }
