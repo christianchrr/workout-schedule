@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Athlete } from 'src/app/Models/athlete';
 import { AthleteService } from 'src/app/myhttp/athlete.service';
@@ -12,8 +13,7 @@ import { NavbarService } from 'src/app/navbar.service';
 })
 export class AllAthletesComponent implements OnInit {
 
-  constructor(private _allusers:AthleteService,
-              private _user:NavbarService) { }
+  constructor(private _allusers:AthleteService,private _user:NavbarService, private router:Router) { }
   athletes: Array<Athlete>=[];
   coaches: Array<Athlete>=[];
   displayedColumns: String[] = ['role', 'first', 'last', 'email']
@@ -36,9 +36,11 @@ export class AllAthletesComponent implements OnInit {
     if(this.user.role=="coach"){
       this.userIsCoach = true;
     }
-
   }
   
-  
+  profile() {
+    this._allusers.findByEmail(this.user.email)
+    this.router.navigate([''])
+  }
 
 }

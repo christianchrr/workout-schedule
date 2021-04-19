@@ -11,7 +11,7 @@ import { NavbarService } from '../navbar.service';
 export class ProfileViewComponent implements OnInit {
 
   constructor(private _user:NavbarService,
-              private _update:AthleteService) { }
+    private _update:AthleteService) { }
 
   user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
 
@@ -40,7 +40,6 @@ export class ProfileViewComponent implements OnInit {
 
   update(){
     this.user = {email:this.email,fname:this.fname,lname:this.lname,password:this.password,role:this.user.role}
-    console.log(this.user);
     this._update.UpdateUser(this.user).subscribe((data:any)=>{
       this.user=data;
     });

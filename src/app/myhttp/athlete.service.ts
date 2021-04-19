@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Athlete } from '../Models/athlete';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,7 +38,6 @@ export class AthleteService {
   }
 
   UpdateUser(newUser:object): Observable<Athlete> {
-    console.log(newUser);
     console.log(this.baseurl+"adduser");
    
     return this.http.put<Athlete>(this.baseurl+"updateuser",newUser).pipe(
@@ -49,6 +47,10 @@ export class AthleteService {
 
   addAthlete(user: object): Observable<object> {
     return this.http.post(this.baseurl+"adduser", user)   
+  }
+
+  findByEmail(email: any): Observable<any> {
+    return this.http.post(this.baseurl+`/email/${email}`, email)   
   }
 
   // Error handling

@@ -1,7 +1,7 @@
 
 <div class="center">
-<h3>{{fname}} {{lname}}</h3>
-<div>Your Role: {{role}}</div>
+<h2 style="width: 500px;">{{fname}} {{lname}}</h2>
+<div><h3>Role: {{role | titlecase}}</h3></div>
 <div *ngIf="changeInfoView, then form else button"></div>
 <ng-template #button>
 <button mat-raised-button color="accent" (click)="changeInfo()">Edit Info</button>
@@ -10,12 +10,12 @@
 <ng-template #form>
     <form>
     <div>
-    <mat-form-field>
+    <mat-form-field style="width: 200px;">
         <input matInput type="text" [(ngModel)]="fname" name="fname">
     </mat-form-field>
     </div>
     <div>
-    <mat-form-field>
+    <mat-form-field style="width: 200px;">
         <input matInput type="text" [(ngModel)]="lname" name="lname">
     </mat-form-field>
     </div>

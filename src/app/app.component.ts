@@ -10,13 +10,8 @@ import { NavbarService } from './navbar.service';
 export class AppComponent {
   
 loggingIn:boolean=false; 
-  
 
-
-
-
-constructor(){
-  
+constructor(){ 
 }
 
 loginStatus(logStatus:boolean){
