@@ -34,10 +34,8 @@ export class NavbarService {
     return this.http.get<any>(this.baseurl+'users');
   }
 
-  GetUserLogin(email:string, password:string): Observable<Athlete>{
-     
-      return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)
-      
+  GetUserLogin(email:string, password:string): Observable<Athlete>{  
+      return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)     
     }
 
   GetUser(): Observable<Athlete> {

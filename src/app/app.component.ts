@@ -10,13 +10,8 @@ import { NavbarService } from './navbar.service';
 export class AppComponent {
   
 loggingIn:boolean=false; 
-  
 
-
-
-
-constructor(){
-  
+constructor(){ 
 }
 
 loginStatus(logStatus:boolean){
@@ -30,7 +25,6 @@ athlete: Array<Athlete> = [];
 
 
   userStatus(userEvent:Array<Athlete>){
-    console.log(userEvent);
     this.athlete = userEvent;
   }
 

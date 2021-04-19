@@ -34,7 +34,7 @@ export class AddAthleteFormComponent implements OnInit {
     }
   }
 
-  submit(){
+  submit() {
     this.http.addAthlete(this.athlete).subscribe((data:any)=>{
         this.athlete=data;
         this.router.navigate(['all-athletes'])

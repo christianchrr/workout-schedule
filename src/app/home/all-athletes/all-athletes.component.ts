@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Athlete } from 'src/app/Models/athlete';
 import { AthleteService } from 'src/app/myhttp/athlete.service';
+import { NavbarService } from 'src/app/navbar.service';
 
 
 @Component({
@@ -11,20 +13,33 @@ import { AthleteService } from 'src/app/myhttp/athlete.service';
 })
 export class AllAthletesComponent implements OnInit {
 
-  constructor(private _allusers:AthleteService) { }
+  constructor(private _allusers:AthleteService,private _user:NavbarService, private router:Router) { }
   athletes: Array<Athlete>=[];
   coaches: Array<Athlete>=[];
   displayedColumns: String[] = ['role', 'first', 'last', 'email']
  
+  user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
+
+  userIsCoach:boolean= false;
 
   ngOnInit(): void {
-    console.log("ngOnInit");
     this._allusers.GetAthletes().subscribe((data:any)=>{
       this.athletes=data;  
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
       this.coaches=data;
     })
+
+    this.user = this._user.getUser()[0];
+
+    if(this.user.role="coach"){
+      this.userIsCoach = true;
+    }
+  }
+  
+  profile() {
+    this._allusers.findByEmail(this.user.email)
+    this.router.navigate([''])
   }
 
 }

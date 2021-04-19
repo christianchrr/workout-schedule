@@ -45,6 +45,8 @@ athletes: Array<Athlete>=[];
   login(){
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
        this.athletes=data;
+       console.log("data")
+       console.log(data)
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);
         this.userLog=true;
