@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from 'src/app/Models/athlete';
+import { AthleteService } from 'src/app/myhttp/athlete.service';
 
 
 @Component({
@@ -9,9 +10,9 @@ import { Athlete } from 'src/app/Models/athlete';
 })
 export class AddAthleteFormComponent implements OnInit {
   
-  athlete = new Athlete('','', '', '', '')
+  athlete = new Athlete('','','','password','Athlete')
 
-  constructor() { }
+  constructor(private http:AthleteService) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,12 @@ export class AddAthleteFormComponent implements OnInit {
     } else {
       this.athlete.lname = value
     }
+  }
+
+  submit(){
+    this.http.addAthlete(this.athlete).subscribe((data:any)=>{
+        this.athlete=data;
+    })
   }
 
 }

@@ -10,8 +10,8 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="test@test.com";
-pW:string="password";
+eM:string="";
+pW:string="";
 
 loginWarn:string="";
 

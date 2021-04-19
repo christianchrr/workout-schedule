@@ -1,44 +1,30 @@
+<h2>Add Team Member</h2>
 
+<form #form="ngForm" ngNativeValidate>
 
- 
+  <div class="form-group" style="width: 190px;">
+    <mat-form-field>
+      <input matInput type="text" class="form-control" placeholder="First Name" name="firstname" [(ngModel)]="athlete.fname" (ngModelChange)="firstNameUppercase($event)" required/>
+    </mat-form-field>
+  </div>
 
+  <div class="form-group" style="width: 190px;">
+    <mat-form-field>
+      <input matInput type="text" class="form-control" placeholder="Last Name" name="lastname" [(ngModel)]="athlete.lname" (ngModelChange)="lastNameUppercase($event)" required/>
+    </mat-form-field>
+  </div>
 
-    <app-navbar></app-navbar>
-    <br/>
+  <div class="form-group" style="width: 190px;">
+    <mat-form-field>
+      <input matInput type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="athlete.email" required/>
+    </mat-form-field>
+  </div>
 
-    <h2>Add Team Member</h2>
-
-    <form #form="ngForm" ngNativeValidate>
-
-      <div class="form-group" style="width: 190px;">
-        <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="First Name" name="firstname" [(ngModel)]="athlete.fname" (ngModelChange)="firstNameUppercase($event)" required/>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group" style="width: 190px;">
-        <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="Last Name" name="lastname" [(ngModel)]="athlete.lname" (ngModelChange)="lastNameUppercase($event)" required/>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group" style="width: 190px;">
-        <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="athlete.email" required/>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group" style="width: 190px;">
-        <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="Phone Number" name="phone" [(ngModel)]="athlete.fname" required/>
-        </mat-form-field>
-      </div>
-
-      <button mat-raised-button color="accent" class="btn btn-primary" type="submit">Add</button>
+  <button mat-raised-button color="accent" class="btn btn-primary" (click)="submit()" routerLink="/all-athletes" type="submit">Add</button>
     
-    </form>
-    {{ form.pristine }}
-    <br/>
-    Model : {{ athlete | json }}
-    <br/>
-    Angular : {{ form.value | json }}
+</form>
+{{ form.pristine }}
+<br/>
+Model : {{ athlete | json }}
+<br/>
+Angular : {{ form.value | json }}

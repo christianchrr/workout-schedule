@@ -1,6 +1,6 @@
 export interface Athletes {
         id: number,
-        firs: string,
+        first: string,
         last: string,
         email: string,
         phone: string,

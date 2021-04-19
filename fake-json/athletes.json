@@ -14,7 +14,6 @@
             "first": "David",
             "last": "Carrillo",
             "email": "david.carrillo@revature.net",
-            "phone": "",
             "type": "Coach"
         },
 
@@ -23,7 +22,7 @@
             "first": "Will",
             "last": "Alexander",
             "email": "@will.alexander@revature.net",
-            "phone": "",
+            "password": "",
             "type": "Coach"
         },
 
@@ -32,7 +31,6 @@
             "first": "Jun",
             "last": "Lei",
             "email": "jun.lei@revature.net",
-            "phone": "",
             "type": "Athlete"
         }
 
