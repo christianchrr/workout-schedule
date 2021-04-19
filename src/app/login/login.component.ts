@@ -10,8 +10,8 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="tevin.gray@revature.net";
-pW:string="password";
+eM:string="david.carrillo@revature.net";
+pW:string="coachpass";
 
 loginWarn:string="";
 
@@ -29,8 +29,6 @@ athletes: any;
   login(){
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe(data=>{
        this.athletes=data;
-       console.log("data")
-       console.log(data)
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);
         this.userLog=true;

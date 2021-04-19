@@ -19,11 +19,7 @@ public class CoachingServiceImpl implements CoachingService {
 		return repository.findAll();
 	}
 	
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> a5f075499de4993872fd160b7deddcd16f8f58e3
 	@Override
 	public User addAthlete(User user) {
 		repository.save(user);
@@ -43,6 +39,18 @@ public class CoachingServiceImpl implements CoachingService {
 	public void removeAthlete(String email) {
 		User removed = findByEmail(email);
 		repository.delete(removed);
+	}
+
+
+	
+	@Override
+	public User updateAthlete(User user) {
+		User FoundUser = repository.findById(user.getEmail()).get();
+		FoundUser.setFname(user.getFname());
+		FoundUser.setLname(user.getLname());
+		FoundUser.setPassword(user.getPassword());
+		FoundUser.setRole(user.getRole());
+		return repository.save(FoundUser);
 	}
 	
 	

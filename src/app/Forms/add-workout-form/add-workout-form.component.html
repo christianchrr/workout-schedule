@@ -9,19 +9,19 @@
   </head>
 
   <body>
-    <h2>Add Team Member</h2>
+    <h2>Add A Workout</h2>
 
     <form #form="ngForm" ngNativeValidate>
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="Exercise" name="exercise" required/>
+          <textarea matInput type="textbox" class="form-control" placeholder="Exercise" name="exercise" required></textarea>
         </mat-form-field>
       </div>
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="" name="" />
+          <textarea matInput type="textbox" class="form-control" placeholder="comments" name="comments" required></textarea>
         </mat-form-field>
       </div>
 
