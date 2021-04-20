@@ -25,6 +25,7 @@ athlete: Array<Athlete> = [];
 
 
   userStatus(userEvent:Array<Athlete>){
+    
     this.athlete = userEvent;
   }
 

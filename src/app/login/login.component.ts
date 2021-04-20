@@ -10,18 +10,17 @@ import { NavbarService } from '../services/navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="";
-pW:string="coachpass";
+  eM:string="";
+  pW:string="coachpass";
 
-loginWarn:string="";
+  loginWarn:string="";
 
   constructor(private testHttp: NavbarService) { }
 
-  ngOnInit(): void {
+  athletes: any;
+    ngOnInit(): void {
   }
 
-  athletes: Array<Athlete>=[];
-  
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
 
@@ -43,16 +42,5 @@ loginWarn:string="";
 
 
 
-  // login(){
-  //   this.testHttp.GetUserLogin(this.eM, this.pW).subscribe(data=>{
-  //                   if(data != null){
-  //                     console.log(typeof(data)+" inside http test");}})
-  //                  console.log(this.athletes +" inside login()");
-  //   if(this.athletes!=null){
-  //   this.userLog=true;
-  //   this.loginEvent.emit(this.userLog)
-  //   console.log(this.userLog+" inside loginComponent");
-  // }
-  // }
 
 }

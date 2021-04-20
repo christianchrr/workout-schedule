@@ -2,6 +2,8 @@ package com.revature.Backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +12,8 @@ import javax.persistence.Table;
 public class CompletedWorkouts {
 	
 	@Id
-	@Column(name = "id")  //make this serialized 
+	@Column(name = "cid") 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
 	@Column(name= "email")
@@ -24,7 +27,11 @@ public class CompletedWorkouts {
 
 	@Column(name = "comments")
 	private String comments;
+	
+	@Column(name = "submission", length = 1000)
+	private byte[] img; 
 
+	
 	public long getId() {
 		return id;
 	}
@@ -63,6 +70,14 @@ public class CompletedWorkouts {
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+	
+	public byte[] getImg() {
+		return img;
+	}
+
+	public void setImg(byte[] img) {
+		this.img = img;
 	}
 	
 	

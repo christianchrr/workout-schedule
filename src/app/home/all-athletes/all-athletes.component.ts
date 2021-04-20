@@ -24,12 +24,12 @@ export class AllAthletesComponent implements OnInit {
 
   ngOnInit(): void {
     this._allusers.GetAthletes().subscribe((data:any)=>{
-      this.athletes=data
+      this.athletes=data 
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
       this.coaches=data
     })
-
+    
     this.user = this._user.getUser()[0];
 
     if(this.user.role == "coach"){

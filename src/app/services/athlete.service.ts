@@ -38,7 +38,6 @@ export class AthleteService {
   }
 
   UpdateUser(newUser:object): Observable<Athlete> {
-    console.log(this.baseurl+"adduser");
    
     return this.http.put<Athlete>(this.baseurl+"updateuser",newUser).pipe(
       catchError(this.errorHandl)

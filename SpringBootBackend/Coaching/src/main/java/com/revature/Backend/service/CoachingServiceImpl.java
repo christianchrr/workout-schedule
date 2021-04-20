@@ -42,6 +42,22 @@ public class CoachingServiceImpl implements CoachingService {
 	}
 
 
+	
+	@Override
+	public User updateAthlete(User user) {
+		User FoundUser = repository.findById(user.getEmail()).get();
+		FoundUser.setFname(user.getFname());
+		FoundUser.setLname(user.getLname());
+		FoundUser.setPassword(user.getPassword());
+		FoundUser.setRole(user.getRole());
+		return repository.save(FoundUser);
+	}
+	
+	
+	
+	
+
+
 
 
 }
