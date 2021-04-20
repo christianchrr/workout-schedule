@@ -25,6 +25,7 @@ export class WorkoutViewComponent implements OnInit {
   ngOnInit(): void {
     this.workoutservice.GetWorkouts().subscribe((data:any)=>{
       this.workouts=data;
+      console.log(this.workouts[0].day)
     })
 
     this.user = this._user.getUser()[0];
