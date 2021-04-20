@@ -15,7 +15,7 @@
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <textarea matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="workout.exercise" required></textarea>
+          <input matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="workout.exercise" required/>
         </mat-form-field>
       </div>
 
@@ -36,7 +36,7 @@
       <button mat-raised-button color="accent" class="btn btn-primary" (click)="submitWorkout()" type="submit">Create</button>
     
     </form>
-    
+
     <br/>
     <button mat-stroked-button routerLink="/workout-view">Cancel</button>
   </body>
