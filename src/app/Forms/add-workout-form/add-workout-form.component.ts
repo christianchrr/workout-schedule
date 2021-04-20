@@ -32,6 +32,7 @@ export class AddWorkoutFormComponent implements OnInit {
     this.workoutUpdate = {workout:this.workout,day:this.day}
     this.http.updateWorkout(this.workoutUpdate).subscribe((data:any)=>{
       this.workoutUpdate=data;
+      this.router.navigate(['workout-view'])
     });
   }
 
