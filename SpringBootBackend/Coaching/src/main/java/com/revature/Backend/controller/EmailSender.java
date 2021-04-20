@@ -40,14 +40,7 @@ public class EmailSender {
                 StandardCharsets.UTF_8.name());
         
          
-        char[] sequence = new char[8]; 
-         
-        Random pass = new Random();
-        for (int i = 0; i < 8; i++) { 
-        	sequence[i] = (char)(pass.nextInt(25) + 97);
-        }
-        String generatedpass = new String(sequence); 
-        user.setPassword(generatedpass);
+        
 
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("fname",user.getFname());
