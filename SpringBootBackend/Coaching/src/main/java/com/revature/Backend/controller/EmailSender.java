@@ -39,12 +39,9 @@ public class EmailSender {
                 MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
                 StandardCharsets.UTF_8.name());
         
-         
-        
-
+        user.setPassword("password");
         Map<String, Object> model = new HashMap<String, Object>();
-        model.put("fname",user.getFname());
-        model.put("lname",user.getLname());
+        model.put("email",user.getEmail());
         model.put("password", user.getPassword());
 
         Context context = new Context();

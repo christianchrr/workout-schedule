@@ -47,7 +47,7 @@ import { NavbarService } from './services/navbar.service';
     MyhttpComponent,
     ProfileViewComponent,
     WeeklyCalendarComponent,
-    WorkoutViewComponent
+    WorkoutViewComponent,
   ],
   imports: [
     BrowserModule,
