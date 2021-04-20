@@ -23,7 +23,7 @@ export class WorkoutService {
   }
 
   addWorkout(workout: object): Observable<object> {
-    return this.http.post(this.baseurl+"", workout)   
+    return this.http.post(this.baseurl+"/workouts/add", workout)   
   }
 
   errorHandl(error: any) {
