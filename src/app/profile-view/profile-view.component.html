@@ -1,10 +1,15 @@
-
+<style>
+    mat-icon {
+        font-size: 20px;
+    }
+</style>
 <div class="center">
-    <h2 style="width: 500px;">{{fname}} {{lname}}</h2>
-    <div><h3>Role: {{role | titlecase}}</h3></div>
-<div *ngIf="changeInfoView, then form else button"></div>
+    <h1 style="width: 500px;"><mat-icon>account_circle</mat-icon> {{fname}} {{lname}}</h1>
+    <div><h3 style="width: 500px;"><mat-icon>work_outline</mat-icon> {{role | titlecase}}</h3></div>
+    <div><h3 style="width: 500px;"><mat-icon> email</mat-icon> {{email}}</h3></div>
+    <div *ngIf="changeInfoView, then form else button"></div>
     <ng-template #button>
-        <button mat-raised-button color="accent" (click)="changeInfo()">Edit Info</button>
+        <button mat-raised-button color="accent" (click)="changeInfo()"><mat-icon>edit</mat-icon> Edit Info </button>
     </ng-template>
 
     <ng-template #form>
