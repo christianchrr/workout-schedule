@@ -38,8 +38,10 @@ export class AllAthletesComponent implements OnInit {
   }
   
   profile(email: any) {
-    this._allusers.findByEmail(email)
-    this.router.navigate(['add-athlete-form'])
+    this._allusers.findByEmail(email).subscribe(data=>{
+      console.log(data);
+    })
+    
   }
 
 }
