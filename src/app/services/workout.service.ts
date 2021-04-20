@@ -26,6 +26,12 @@ export class WorkoutService {
     return this.http.post(this.baseurl+"/workouts/add", workout)   
   }
 
+  updateWorkout(workout:object): Observable<Workout> { 
+    return this.http.put<Workout>(this.baseurl+"workouts/update",workout).pipe(
+      catchError(this.errorHandl)
+    )
+  }
+
   errorHandl(error: any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

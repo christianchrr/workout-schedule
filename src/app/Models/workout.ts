@@ -1,6 +1,6 @@
 export class Workout {
     constructor(
-        public exercise: string,
+        public workout: string,
         public day: string
     ){}
 }

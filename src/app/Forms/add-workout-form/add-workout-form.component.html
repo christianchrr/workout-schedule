@@ -15,13 +15,13 @@
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <input matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="workout.exercise" required/>
+          <input matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="newWorkout.workout" required/>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="fill">
         <mat-label>Day</mat-label>
-        <select matNativeControl name="day" [(ngModel)]="workout.day" required>
+        <select matNativeControl name="day" [(ngModel)]="newWorkout.day" required>
           <option selected disabled></option>
           <option value="Sunday">Sunday</option>
           <option value="Monday">Monday</option>
@@ -33,12 +33,19 @@
         </select>
       </mat-form-field>
       <br/>
-      <button mat-raised-button color="accent" class="btn btn-primary" (click)="submitWorkout()" type="submit">Create</button>
+      <button mat-raised-button color="accent" class="btn btn-primary" (click)="update()" type="submit">Create</button>
     
     </form>
 
     <br/>
     <button mat-stroked-button routerLink="/workout-view">Cancel</button>
+
+    {{ form.pristine }}
+    <br/>
+    Model : {{ workout | json }}
+    <br/>
+    Angular : {{ form.value | json }}
+
   </body>
 
 </html>
