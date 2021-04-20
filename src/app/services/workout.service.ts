@@ -15,7 +15,7 @@ export class WorkoutService {
   constructor(private http:HttpClient) { }
 
   GetWorkouts(): Observable<Workout> {
-    return this.http.get<Workout>(this.baseurl+"")
+    return this.http.get<Workout>(this.baseurl+"/workouts")
     .pipe(
       retry(1),
       catchError(this.errorHandl)

@@ -15,19 +15,28 @@
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <textarea matInput type="textbox" class="form-control" placeholder="Exercise" name="exercise" required></textarea>
+          <textarea matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="workout.exercise" required></textarea>
         </mat-form-field>
       </div>
 
-      <div class="form-group" style="width: 200px;">
-        <mat-form-field>
-          <textarea matInput type="textbox" class="form-control" placeholder="comments" name="comments" required></textarea>
-        </mat-form-field>
-      </div>
-
-      <button mat-raised-button color="accent" class="btn btn-primary" (click)="submitWorkout()" type="submit">Create Workout</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Day</mat-label>
+        <select matNativeControl name="day" [(ngModel)]="workout.day" required>
+          <option selected disabled></option>
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
+      </mat-form-field>
+      <br/>
+      <button mat-raised-button color="accent" class="btn btn-primary" (click)="submitWorkout()" type="submit">Create</button>
     
     </form>
+    
     <br/>
     <button mat-stroked-button routerLink="/workout-view">Cancel</button>
   </body>
