@@ -8,17 +8,17 @@
 </head>
 <body>
 
-<h1>This is just a sample html page</h1>
+<h1>You have successfully been added to the roster</h1>
 
-<h2>Below are the details that were passed to the html page</h2>
+<p>Your account has been registered with the credentials below, 
+   Please change your password ASAP!</p>
 
-<p th:text="${'First Name : ' + fname}"></p>
-<p th:text="${'Last Name :' + lname}"></p>
+<p th:text="${'Email : ' + email}"></p>
 <p th:text="${'Password : ' + password}"></p>
 
-<p><b>You can create the page the way you wish to have your Email body using HTML tags</b></p>
+<a href="http://localhost:4200">Click here to log in.</a> 
 
-<p><b>Bootstrap can be added to design. Images can be added. All according to your preference</b></p>
+<p><b>Now get out there and get to work!</b></p>
 
 </body>
 </html>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Athlete } from 'src/app/Models/athlete';
 import { AthleteService } from 'src/app/services/athlete.service';
+import { EmailService } from 'src/app/services/email.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AddAthleteFormComponent implements OnInit {
   
   athlete = new Athlete('','','','password','athlete')
 
-  constructor(private http:AthleteService, private router:Router) { }
+  constructor(private http:AthleteService, private router:Router, private email:EmailService) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +38,9 @@ export class AddAthleteFormComponent implements OnInit {
   submitAthlete() {
     this.http.addAthlete(this.athlete).subscribe((data:any)=>{
         this.athlete=data;
+        this.email.sendEmail(this.athlete).subscribe(data => {
+          console.log(data);   
+        })
         this.router.navigate(['all-athletes'])
     })
   }
