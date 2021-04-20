@@ -37,7 +37,7 @@ export class AllAthletesComponent implements OnInit {
     }
   }
   
-  profile(email: any) {
+  profile(email: string) {
     this._allusers.findByEmail(email).subscribe(data=>{
       console.log(data);
     })
