@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { WeekWorkout } from '../Models/WeekWorkout';
 import { Workout } from '../Models/workout';
 
 @Injectable({
@@ -26,8 +27,8 @@ export class WorkoutService {
     return this.http.post<Workout>(this.baseurl+"/workouts/add", workout)   
   }
 
-  updateWorkout(workout:object): Observable<Workout> { 
-    return this.http.put<Workout>(this.baseurl+"workouts/update",workout).pipe(
+  updateWorkout(workout:object): Observable<WeekWorkout> { 
+    return this.http.put<WeekWorkout>(this.baseurl+"workouts/update",workout).pipe(
       catchError(this.errorHandl)
     )
   }
