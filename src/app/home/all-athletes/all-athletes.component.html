@@ -34,7 +34,7 @@
       <!-- Name Column -->
       <ng-container matColumnDef="first">
         <th mat-header-cell *matHeaderCellDef> Frist Name </th>
-        <td mat-cell *matCellDef="let athlete"><a> {{athlete.fname}} </a></td>
+        <td mat-cell *matCellDef="let athlete"><a (click)="profile(athlete.email)"> {{athlete.fname}} </a></td>
       </ng-container>
           
       <!-- Weight Column -->

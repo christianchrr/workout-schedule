@@ -47,8 +47,8 @@ export class AthleteService {
     return this.http.post(this.baseurl+"adduser", user)   
   }
 
-  findByEmail(email: any): Observable<any> {
-    return this.http.post(this.baseurl+`/email/${email}`, email)   
+  findByEmail(email: String): Observable<any> {
+    return this.http.get(this.baseurl+"usermail/"+email)   
   }
 
   // Error handling
