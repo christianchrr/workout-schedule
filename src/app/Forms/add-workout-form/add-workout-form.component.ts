@@ -42,13 +42,11 @@ weekdays:string[]=[
   }
 
   update(){
-    console.log(this.id);
-    console.log(this.weekdays[(this.id) - 1]);
-    console.log(this.workout);
     this.workoutUpdate = {id:this.id, day:this.weekdays[(this.id)-1], workout:this.workout}
     this.http.updateWorkout(this.workoutUpdate).subscribe((data:any)=>{
       this.workoutUpdate=data;
     });
+    this.router.navigate(['']);
   }
 
 }
