@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Athlete } from 'src/app/Models/athlete';
-import { AthleteService } from 'src/app/myhttp/athlete.service';
+import { AthleteService } from 'src/app/services/athlete.service';
 
 
 @Component({
@@ -34,7 +34,7 @@ export class AddAthleteFormComponent implements OnInit {
     }
   }
 
-  submit() {
+  submitAthlete() {
     this.http.addAthlete(this.athlete).subscribe((data:any)=>{
         this.athlete=data;
         this.router.navigate(['all-athletes'])

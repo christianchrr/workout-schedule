@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from '../Models/athlete';
-import { AthleteService } from '../myhttp/athlete.service';
-import { NavbarService } from '../navbar.service';
+import { AthleteService } from '../services/athlete.service';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-profile-view',

@@ -1,7 +1,7 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from '../Models/athlete';
-import { NavbarService } from '../navbar.service';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -16,25 +16,11 @@ pW:string="coachpass";
 loginWarn:string="";
 
   constructor(private testHttp: NavbarService) { }
-athletes: Array<Athlete>=[];
+
   ngOnInit(): void {
   }
 
-
-  type:boolean=true;
-  typeUsr: string= "Athlete"
-
-  changeT(){
-    this.type=!this.type;
-  }
-  changeUrA(){
-    this.typeUsr = "Coach";
-  }
-  changeUrC(){
-    this.typeUsr = "Athlete";
-    console.log(this.typeUsr);
-  }
-
+  athletes: Array<Athlete>=[];
   
   @Output() loginEvent = new EventEmitter();
   userLog:boolean=false;
@@ -44,9 +30,7 @@ athletes: Array<Athlete>=[];
 
   login(){
    this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
-       this.athletes=data;
-       console.log("data")
-       console.log(data)
+      this.athletes=data;
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);
         this.userLog=true;

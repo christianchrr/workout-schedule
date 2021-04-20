@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Athlete } from './Models/athlete';
+import { AthleteService } from './athlete.service';
+import { Athlete } from '../Models/athlete';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class NavbarService {
     return this.http.get<any>(this.baseurl+'users');
   }
 
-  GetUserLogin(email:string, password:string): Observable<Athlete>{  
+  GetUserLogin(email:string, password:string): Observable<Athlete>{ 
       return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)     
     }
 

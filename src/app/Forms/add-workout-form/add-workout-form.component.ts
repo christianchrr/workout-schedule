@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Workout } from 'src/app/Models/workout';
+import { WorkoutService } from 'src/app/services/workout.service';
 
 @Component({
   selector: 'app-add-workout-form',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddWorkoutFormComponent implements OnInit {
 
-  constructor() { }
+  workout = new Workout('','')
+
+  constructor(private http:WorkoutService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  submitWorkout() {
+    this.http.addWorkout(this.workout).subscribe((data:any)=>{
+        this.workout=data;
+        this.router.navigate(['workout-view'])
+    })
   }
 
 }

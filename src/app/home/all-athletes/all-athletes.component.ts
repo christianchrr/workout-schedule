@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Athlete } from 'src/app/Models/athlete';
-import { AthleteService } from 'src/app/myhttp/athlete.service';
-import { NavbarService } from 'src/app/navbar.service';
+import { AthleteService } from 'src/app/services/athlete.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -24,22 +24,22 @@ export class AllAthletesComponent implements OnInit {
 
   ngOnInit(): void {
     this._allusers.GetAthletes().subscribe((data:any)=>{
-      this.athletes=data;  
+      this.athletes=data
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
-      this.coaches=data;
+      this.coaches=data
     })
 
     this.user = this._user.getUser()[0];
 
-    if(this.user.role="coach"){
-      this.userIsCoach = true;
+    if(this.user.role == "coach"){
+      this.userIsCoach = true
     }
   }
   
-  profile() {
-    this._allusers.findByEmail(this.user.email)
-    this.router.navigate([''])
+  profile(email: any) {
+    this._allusers.findByEmail(email)
+    this.router.navigate(['add-athlete-form'])
   }
 
 }

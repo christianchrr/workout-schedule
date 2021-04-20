@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from 'src/app/Models/athlete';
-import { AthleteService } from 'src/app/myhttp/athlete.service';
-import { NavbarService } from 'src/app/navbar.service';
+import { AthleteService } from 'src/app/services/athlete.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-workout-view',
@@ -26,7 +26,7 @@ export class WorkoutViewComponent implements OnInit {
 
     this.user = this._user.getUser()[0];
 
-    if(this.user.role="coach"){
+    if(this.user.role == "coach"){
       this.userIsCoach = true;
     }
   }

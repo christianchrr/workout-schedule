@@ -20,7 +20,7 @@ export class AthleteService {
   }
   
    // GET
-   GetAthletes(): Observable<Athlete> {
+  GetAthletes(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseurl+"role/athlete")
     .pipe(
       retry(1),

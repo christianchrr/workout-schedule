@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Athlete } from './Models/athlete';
-import { NavbarService } from './navbar.service';
+import { NavbarService } from './services/navbar.service';
 
 @Component({
   selector: 'app-root',
