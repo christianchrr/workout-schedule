@@ -28,8 +28,8 @@ public class CompletedWorkouts {
 	@Column(name = "comments")
 	private String comments;
 	
-	@Column(name = "submission", length = 1000)
-	private byte[] img; 
+//	@Column(name = "submission", length = 1000)
+//	private byte[] img; 
 
 	
 	public long getId() {
@@ -72,13 +72,13 @@ public class CompletedWorkouts {
 		this.comments = comments;
 	}
 	
-	public byte[] getImg() {
-		return img;
-	}
-
-	public void setImg(byte[] img) {
-		this.img = img;
-	}
+//	public byte[] getImg() {
+//		return img;
+//	}
+//
+//	public void setImg(byte[] img) {
+//		this.img = img;
+//	}
 	
 	
 	

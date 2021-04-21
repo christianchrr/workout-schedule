@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.revature.Backend.model.CompletedWorkoutSubmission;
 import com.revature.Backend.model.CompletedWorkouts;
 import com.revature.Backend.model.User;
 import com.revature.Backend.model.WeeklyWorkouts;
@@ -92,36 +93,31 @@ public class WWController {
 	}
 	
 	@PostMapping("/users/submitcw")
-	public ResponseEntity<CompletedWorkouts> save(
-			@RequestParam ("email") String email, 
-			@RequestParam("submission") MultipartFile file,
-			@RequestParam("day") String day, 
-			@RequestParam("comments") String comments,
-			@RequestParam("workout") String workout) throws IOException {
+	public ResponseEntity<CompletedWorkouts> save(CompletedWorkoutSubmission cws) throws IOException {
 		
 		CompletedWorkouts cw = new CompletedWorkouts(); 
 	
-		Deflater def = new Deflater(); 
-		def.setInput(file.getBytes()); 
-		def.finish(); 
+//		Deflater def = new Deflater(); 
+//		def.setInput(cws.getFile().getBytes()); 
+//		def.finish(); 
+//		
+//		ByteArrayOutputStream ostream = new ByteArrayOutputStream(cws.getFile().getBytes().length); 
+//		byte[] buffer = new byte[1024]; 
+//		while (!def.finished()) { 
+//			int count = def.deflate(buffer); 
+//			ostream.write(buffer, 0, count); 
+//		}
+//		try { 
+//			ostream.close(); 
+//		} catch (IOException e) {} 
+//		
+//		byte[] compressed = ostream.toByteArray(); 
 		
-		ByteArrayOutputStream ostream = new ByteArrayOutputStream(file.getBytes().length); 
-		byte[] buffer = new byte[1024]; 
-		while (!def.finished()) { 
-			int count = def.deflate(buffer); 
-			ostream.write(buffer, 0, count); 
-		}
-		try { 
-			ostream.close(); 
-		} catch (IOException e) {} 
-		
-		byte[] compressed = ostream.toByteArray(); 
-		
-		cw.setComments(comments); 
-		cw.setDay(day); 
-		cw.setEmail(email); 
-		cw.setWorkout(workout); 
-		cw.setImg(compressed);
+		cw.setComments(cws.getComments()); 
+		cw.setDay(cws.getDay()); 
+		cw.setEmail(cws.getEmail()); 
+		cw.setWorkout(cws.getWorkout()); 
+//		cw.setImg(compressed);
 		CompletedWorkouts completed = compservice.submitCW(cw);
 		return new ResponseEntity<CompletedWorkouts>(completed, HttpStatus.OK);
 	}
