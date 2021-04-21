@@ -40,6 +40,10 @@ export class WorkoutService {
     return this.http.post<CompleteWorkout>(this.baseurl+"users/submitcw", cworkout)   
   }
 
+  getAllCompletedWorkouts(): Observable<Array<CompleteWorkout>> {
+    return this.http.get<Array<CompleteWorkout>>(this.baseurl+ "compworkouts");
+  }
+
   // ----------------------------
   errorHandl(error: any) {
     let errorMessage = '';

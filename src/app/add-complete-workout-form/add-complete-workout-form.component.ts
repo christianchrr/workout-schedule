@@ -11,7 +11,7 @@ import { CompleteWorkout } from '../Models/complete-workout';
 export class AddCompleteWorkoutFormComponent implements OnInit {
   [x: string]: any;
 
-  // cworkout = new CompleteWorkout('','','','','')
+  cworkout = new CompleteWorkout('',null,'','','');
 
 
   constructor() { }

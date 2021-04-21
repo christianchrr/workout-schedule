@@ -38,3 +38,7 @@
     <button mat-raised-button color="accent" routerLink="/add-complete-workout-form">Add Completed Workout</button>
 
 </div>
+
+<div *ngFor="let workout of workouts">
+{{workout.day}} -- {{workout.submission}}
+</div>
