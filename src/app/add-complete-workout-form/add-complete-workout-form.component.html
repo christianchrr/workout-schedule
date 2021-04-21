@@ -7,37 +7,37 @@
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <input matInput type="textbox" class="form-control" placeholder="Workout" name="workout" required/>
+          <input matInput type="textbox" class="form-control" placeholder="Workout" name="workout" [(ngModel)]="cworkout.workout" required/>
         </mat-form-field>
       </div>
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <input matInput type="textbox" class="form-control" placeholder="Comments" name="comments"/>
+          <input matInput type="textbox" class="form-control" placeholder="Comments" name="comments" [(ngModel)]="cworkout.comments" />
         </mat-form-field>
       </div>
 
       <div class="form-group" style="width: 200px;">
         <mat-form-field>
-          <ngx-mat-file-input matInput type="file" class="form-control" placeholder="Click To Add File" name=""></ngx-mat-file-input>
+          <ngx-mat-file-input matInput type="file" class="form-control" placeholder="Click To Add File" name="submission" [(ngModel)]="cworkout.submission"></ngx-mat-file-input>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="fill">
         <mat-label>Day</mat-label>
-        <select matNativeControl name="day" required>
+        <select matNativeControl name="day" [(ngModel)]="cworkout.day" required>
           <option selected disabled></option>
-          <option value="1">Sunday</option>
-          <option value="2">Monday</option>
-          <option value="3">Tuesday</option>
-          <option value="4">Wednesday</option>
-          <option value="5">Thursday</option>
-          <option value="6">Friday</option>
-          <option value="7">Saturday</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
         </select>
       </mat-form-field>
       <br/>
-      <button mat-raised-button color="accent" class="btn btn-primary" type="submit">Submit</button>
+      <button mat-raised-button color="accent" class="btn btn-primary" type="submit" (click)="submitCompleteWorkout()">Submit</button>
     
     </form>
 
