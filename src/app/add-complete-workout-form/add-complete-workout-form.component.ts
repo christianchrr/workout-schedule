@@ -12,7 +12,7 @@ import { WorkoutService } from '../services/workout.service';
 export class AddCompleteWorkoutFormComponent implements OnInit {
   [x: string]: any;
 
-   cworkout = new CompleteWorkout('',null,'','','');
+   cworkout = new CompleteWorkout('','','','');
 
 
   constructor(private _http:WorkoutService, private _user:NavbarService, private router:Router) { }

@@ -28,7 +28,7 @@ export class ProfileViewComponent implements OnInit {
   role:string = this.user.role;
 
   workouts: Array<CompleteWorkout> = [];
-
+  displayedColumns: String[] = ['day', 'workout', 'comments']
   
 
   ngOnInit(): void {
