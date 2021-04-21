@@ -28,7 +28,7 @@ public class WWServiceImpl implements WWService {
 	
 	@Override
 	public WeeklyWorkouts updateWW(WeeklyWorkouts ww) { 
-		WeeklyWorkouts updatedww = wwrepo.getByDay(ww.getDay()).get();
+		WeeklyWorkouts updatedww = wwrepo.findById(ww.getId()).get();
 		updatedww.setDay(ww.getDay());
 		updatedww.setWorkout(ww.getWorkout());
 		return wwrepo.save(updatedww);

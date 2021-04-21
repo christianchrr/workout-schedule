@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Athlete } from '../Models/athlete';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-individual-view',
@@ -7,12 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IndividualViewComponent implements OnInit {
 
-  @Input() individual: any
+  selectedUser:Athlete={email:"",fname:'',lname:"",password:"",role:""};
 
-  constructor() { }
+  constructor(private _user:NavbarService) { }
 
   ngOnInit(): void {
-    console.log(this.individual)
+    this.selectedUser = this._user.getSelectedUser();
   }
 
 }
