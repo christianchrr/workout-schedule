@@ -70,30 +70,30 @@ public class WWController {
 	public ResponseEntity<List<CompletedWorkouts>> getcompbyemail(@PathVariable("email") String email) { 
 		List<CompletedWorkouts> cws = compservice.getCWbyEmail(email);
 		
-		Inflater inflater = new Inflater(); 
-		for (int i = 0; i < cws.size(); i++) {
-			byte[] bytes = cws.get(i).getImg();
-			inflater.setInput(bytes);
-			ByteArrayOutputStream ostream = new ByteArrayOutputStream(bytes.length);
-			byte[] buffer = new byte[1024];
-			try { 
-				while (!inflater.finished()) { 
-					int count = inflater.inflate(buffer); 
-					ostream.write(buffer,0,count); 
-				}
-			ostream.close(); 
-			} catch (IOException e) {} catch (DataFormatException d) {}
-			String template = "data:image/png;base64,"; 
-			String fixing = ostream.toString(); 
-			template.concat(fixing); 
-			cws.get(i).setImg(fixing.getBytes()); 
-			//cws.get(i).setImg(ostream.toByteArray());     
-		}
+//		Inflater inflater = new Inflater(); 
+//		for (int i = 0; i < cws.size(); i++) {
+//			byte[] bytes = cws.get(i).getImg();
+//			inflater.setInput(bytes);
+//			ByteArrayOutputStream ostream = new ByteArrayOutputStream(bytes.length);
+//			byte[] buffer = new byte[1024];
+//			try { 
+//				while (!inflater.finished()) { 
+//					int count = inflater.inflate(buffer); 
+//					ostream.write(buffer,0,count); 
+//				}
+//			ostream.close(); 
+//			} catch (IOException e) {} catch (DataFormatException d) {}
+//			String template = "data:image/png;base64,"; 
+//			String fixing = ostream.toString(); 
+//			template.concat(fixing); 
+//			cws.get(i).setImg(fixing.getBytes()); 
+//			//cws.get(i).setImg(ostream.toByteArray());     
+//		}
 		return new ResponseEntity<List<CompletedWorkouts>>(cws, HttpStatus.OK); 
 	}
 	
 	@PostMapping("/users/submitcw")
-	public ResponseEntity<CompletedWorkouts> save(CompletedWorkoutSubmission cws) throws IOException {
+	public ResponseEntity<CompletedWorkouts> save(@RequestBody CompletedWorkouts cws) throws IOException {
 		
 		CompletedWorkouts cw = new CompletedWorkouts(); 
 	
@@ -118,7 +118,7 @@ public class WWController {
 		cw.setEmail(cws.getEmail()); 
 		cw.setWorkout(cws.getWorkout()); 
 //		cw.setImg(compressed);
-		CompletedWorkouts completed = compservice.submitCW(cw);
+		CompletedWorkouts completed = compservice.submitCW(cws);
 		return new ResponseEntity<CompletedWorkouts>(completed, HttpStatus.OK);
 	}
 	
