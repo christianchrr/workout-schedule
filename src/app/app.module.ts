@@ -34,6 +34,7 @@ import { MyhttpComponent } from './services/myhttp.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarService } from './services/navbar.service';
 import { IndividualViewComponent } from './individual-view/individual-view.component';
+import { AddCompleteWorkoutFormComponent } from './add-complete-workout-form/add-complete-workout-form.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { IndividualViewComponent } from './individual-view/individual-view.compo
     WeeklyCalendarComponent,
     WorkoutViewComponent,
     IndividualViewComponent,
+    AddCompleteWorkoutFormComponent,
   ],
   imports: [
     BrowserModule,

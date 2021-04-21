@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { CompleteWorkout } from '../Models/complete-workout';
 
 import { Workout } from '../Models/workout';
 
@@ -16,7 +17,7 @@ export class WorkoutService {
   constructor(private http:HttpClient) { }
 
   GetWorkouts(): Observable<Workout> {
-    return this.http.get<Workout>(this.baseurl+"/workouts")
+    return this.http.get<Workout>(this.baseurl+"workouts")
     .pipe(
       retry(1),
       catchError(this.errorHandl)
@@ -24,7 +25,7 @@ export class WorkoutService {
   }
 
   addWorkout(workout: Workout): Observable<Workout> {
-    return this.http.post<Workout>(this.baseurl+"/workouts/add", workout)   
+    return this.http.post<Workout>(this.baseurl+"workouts/add", workout)   
   }
 
   updateWorkout(workout:object): Observable<Workout> { 
@@ -33,6 +34,13 @@ export class WorkoutService {
     )
   }
 
+  // ----------------------------
+
+  addCompletedWorkout(cworkout: CompleteWorkout): Observable<CompleteWorkout> {
+    return this.http.post<CompleteWorkout>(this.baseurl+"users/submitcw", cworkout)   
+  }
+
+  // ----------------------------
   errorHandl(error: any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

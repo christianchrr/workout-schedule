@@ -44,7 +44,9 @@ export class ProfileViewComponent implements OnInit {
     this.user = {email:this.email,fname:this.fname,lname:this.lname,password:this.password,role:this.user.role}
     this._update.UpdateUser(this.user).subscribe((data:any)=>{
       this.user=data;
-      this.router.navigate(['profile-view']);
+      let x:Array<Athlete>=[this.user];
+      this._user.setUser(x);
+      this.changeInfo();
     });
   }
 
