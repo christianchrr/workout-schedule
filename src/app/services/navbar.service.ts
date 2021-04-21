@@ -35,6 +35,7 @@ export class NavbarService {
   setUser(user: Array<Athlete>){
     this.cachedUser= user;
   }
+  
   getUser(): Array<Athlete>{ 
     return this.cachedUser;
   }
