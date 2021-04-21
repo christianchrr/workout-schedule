@@ -3,3 +3,30 @@
     <div><h2><mat-icon>work_outline</mat-icon> {{selectedUser.role | titlecase}}</h2></div>
     <div><h3><mat-icon> email</mat-icon> {{selectedUser.email | lowercase}}</h3></div>
 </div>
+
+<table mat-table [dataSource]="workouts" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+    The actual rendered columns are set as a property on the row definition" -->
+    
+    <!-- Position Column -->
+    <ng-container matColumnDef="day">
+      <th mat-header-cell *matHeaderCellDef><mat-icon>calendar_today</mat-icon> Day </th>
+      <td mat-cell *matCellDef="let workout"> {{workout.day}} </td>
+    </ng-container>
+            
+    <!-- Name Column -->
+    <ng-container matColumnDef="workout">
+      <th mat-header-cell *matHeaderCellDef><mat-icon>fitness_center</mat-icon> Workouts </th>
+      <td mat-cell *matCellDef="let workout"> {{workout.workout}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef><mat-icon>fitness_center</mat-icon> Comments </th>
+      <td mat-cell *matCellDef="let workout"> {{workout.comments}} </td>
+    </ng-container>
+            
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </table> 

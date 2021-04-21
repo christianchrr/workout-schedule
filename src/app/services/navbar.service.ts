@@ -53,6 +53,12 @@ export class NavbarService {
     return this.http.get<Athlete>(this.baseurl+"/users")   
   }
 
+  //==============================================
+
+  recoverPassword(email:string): Observable<any>{
+    return this.http.post<any>(this.baseurl+'recovery', email);
+  }
+
   errorHandl(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

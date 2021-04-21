@@ -12,15 +12,10 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import com.revature.Backend.model.User;
 import com.revature.Backend.repository.CoachingRepository;
-
 import javax.mail.internet.MimeMessage;
-
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-import java.util.stream.IntStream;
 
 @RequestMapping("/api/v1")
 @Controller
@@ -65,23 +60,24 @@ public class EmailSender {
     }
     
     @RequestMapping("/recovery")
-    public @ResponseBody void recovery(@RequestBody User user) throws Exception {
+    public @ResponseBody void recovery(@RequestBody String email) throws Exception {
 
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message,
                 MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
                 StandardCharsets.UTF_8.name());
+
         
-        String password = repo.recoverPass(user.getEmail().toLowerCase()); 
+        String password = repo.recoverPass(email.toLowerCase()); 
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("password", password);
 
         Context context = new Context();
         context.setVariables(model);
         String html = templateEngine.process("recovery", context);
-        	
+
         try {
-            helper.setTo(user.getEmail());
+            helper.setTo(email);
             helper.setText(html,true);
             helper.setSubject("Athlete's Portal: Password Recovery Request");
         } catch (javax.mail.MessagingException e) {

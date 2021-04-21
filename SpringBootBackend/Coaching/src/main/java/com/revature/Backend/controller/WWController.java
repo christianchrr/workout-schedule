@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+//import com.revature.Backend.model.CompletedWorkoutSubmission;
 import com.revature.Backend.model.CompletedWorkouts;
 import com.revature.Backend.model.User;
 import com.revature.Backend.model.WeeklyWorkouts;
@@ -57,6 +58,7 @@ public class WWController {
 		return new ResponseEntity<WeeklyWorkouts>(updated, HttpStatus.OK);
 	}
 
+	//===============================================================================================
 	
 	@GetMapping("/compworkouts")
 	public ResponseEntity<List<CompletedWorkouts>> getcomp() {
@@ -68,56 +70,55 @@ public class WWController {
 	public ResponseEntity<List<CompletedWorkouts>> getcompbyemail(@PathVariable("email") String email) { 
 		List<CompletedWorkouts> cws = compservice.getCWbyEmail(email);
 		
-		Inflater inflater = new Inflater(); 
-		for (int i = 0; i < cws.size(); i++) {
-			byte[] bytes = cws.get(i).getImg();
-			inflater.setInput(bytes);
-			ByteArrayOutputStream ostream = new ByteArrayOutputStream(bytes.length);
-			byte[] buffer = new byte[1024];
-			try { 
-				while (!inflater.finished()) { 
-					int count = inflater.inflate(buffer); 
-					ostream.write(buffer,0,count); 
-				}
-			ostream.close(); 
-			} catch (IOException e) {} catch (DataFormatException d) {}
-			cws.get(i).setImg(ostream.toByteArray());  
-		}
+//		Inflater inflater = new Inflater(); 
+//		for (int i = 0; i < cws.size(); i++) {
+//			byte[] bytes = cws.get(i).getImg();
+//			inflater.setInput(bytes);
+//			ByteArrayOutputStream ostream = new ByteArrayOutputStream(bytes.length);
+//			byte[] buffer = new byte[1024];
+//			try { 
+//				while (!inflater.finished()) { 
+//					int count = inflater.inflate(buffer); 
+//					ostream.write(buffer,0,count); 
+//				}
+//			ostream.close(); 
+//			} catch (IOException e) {} catch (DataFormatException d) {}
+//			String template = "data:image/png;base64,"; 
+//			String fixing = ostream.toString(); 
+//			template.concat(fixing); 
+//			cws.get(i).setImg(fixing.getBytes()); 
+//			//cws.get(i).setImg(ostream.toByteArray());     
+//		}
 		return new ResponseEntity<List<CompletedWorkouts>>(cws, HttpStatus.OK); 
 	}
 	
 	@PostMapping("/users/submitcw")
-	public ResponseEntity<CompletedWorkouts> save(
-			@RequestParam ("email") String email, 
-			@RequestParam("submission") MultipartFile file,
-			@RequestParam("day") String day, 
-			@RequestParam("comments") String comments,
-			@RequestParam("workout") String workout) throws IOException {
+	public ResponseEntity<CompletedWorkouts> save(@RequestBody CompletedWorkouts cws) throws IOException {
 		
 		CompletedWorkouts cw = new CompletedWorkouts(); 
 	
-		Deflater def = new Deflater(); 
-		def.setInput(file.getBytes()); 
-		def.finish(); 
+//		Deflater def = new Deflater(); 
+//		def.setInput(cws.getFile().getBytes()); 
+//		def.finish(); 
+//		
+//		ByteArrayOutputStream ostream = new ByteArrayOutputStream(cws.getFile().getBytes().length); 
+//		byte[] buffer = new byte[1024]; 
+//		while (!def.finished()) { 
+//			int count = def.deflate(buffer); 
+//			ostream.write(buffer, 0, count); 
+//		}
+//		try { 
+//			ostream.close(); 
+//		} catch (IOException e) {} 
+//		
+//		byte[] compressed = ostream.toByteArray(); 
 		
-		ByteArrayOutputStream ostream = new ByteArrayOutputStream(file.getBytes().length); 
-		byte[] buffer = new byte[1024]; 
-		while (!def.finished()) { 
-			int count = def.deflate(buffer); 
-			ostream.write(buffer, 0, count); 
-		}
-		try { 
-			ostream.close(); 
-		} catch (IOException e) {} 
-		
-		byte[] compressed = ostream.toByteArray(); 
-		
-		cw.setComments(comments); 
-		cw.setDay(day); 
-		cw.setEmail(email); 
-		cw.setWorkout(workout); 
-		cw.setImg(compressed);
-		CompletedWorkouts completed = compservice.submitCW(cw);
+		cw.setComments(cws.getComments()); 
+		cw.setDay(cws.getDay()); 
+		cw.setEmail(cws.getEmail()); 
+		cw.setWorkout(cws.getWorkout()); 
+//		cw.setImg(compressed);
+		CompletedWorkouts completed = compservice.submitCW(cws);
 		return new ResponseEntity<CompletedWorkouts>(completed, HttpStatus.OK);
 	}
 	

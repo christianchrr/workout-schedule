@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -36,8 +37,14 @@ export class WorkoutService {
 
   // ----------------------------
 
-  addCompletedWorkout(cworkout: CompleteWorkout): Observable<CompleteWorkout> {
+  addCompletedWorkout(
+    cworkout:CompleteWorkout
+    ): Observable<CompleteWorkout> {
     return this.http.post<CompleteWorkout>(this.baseurl+"users/submitcw", cworkout)   
+  }
+
+  getAllCompletedWorkouts(email:string): Observable<Array<CompleteWorkout>> {
+    return this.http.get<Array<CompleteWorkout>>(this.baseurl+ "compworkouts/"+email);
   }
 
   // ----------------------------

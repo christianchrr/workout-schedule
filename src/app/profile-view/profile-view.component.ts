@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Athlete } from '../Models/athlete';
+import { CompleteWorkout } from '../Models/complete-workout';
 import { AthleteService } from '../services/athlete.service';
 import { NavbarService } from '../services/navbar.service';
+import { WorkoutService } from '../services/workout.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -13,7 +15,8 @@ export class ProfileViewComponent implements OnInit {
 
   constructor(private _user:NavbarService,
     private _update:AthleteService,
-    private router:Router) { }
+    private router:Router,
+    private _workouts:WorkoutService) { }
 
   user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
 
@@ -24,6 +27,10 @@ export class ProfileViewComponent implements OnInit {
   password:string=this.user.password;
   role:string = this.user.role;
 
+  workouts: Array<CompleteWorkout> = [];
+  displayedColumns: String[] = ['day', 'workout', 'comments']
+  
+
   ngOnInit(): void {
     this.user = this._user.getUser()[0];
 
@@ -32,6 +39,12 @@ export class ProfileViewComponent implements OnInit {
     this.lname=this.user.lname; 
     this.password=this.user.password;
     this.role = this.user.role;
+
+
+    this._workouts.getAllCompletedWorkouts(this.user.email).subscribe(data => {
+      this.workouts=data;
+      console.log(data);
+    })
   }
   
   changeInfoView:boolean=false;

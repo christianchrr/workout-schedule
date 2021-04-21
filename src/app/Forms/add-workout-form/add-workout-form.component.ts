@@ -27,8 +27,6 @@ weekdays:string[]=[
   "Saturday"
 ]
 
-  
-
   constructor(private http:WorkoutService, private router:Router) { }
 
   ngOnInit(): void {
