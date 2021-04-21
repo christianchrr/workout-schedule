@@ -9,6 +9,7 @@ import { WorkoutViewComponent } from './home/workout-view/workout-view.component
 import { MyhttpComponent } from './services/myhttp.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
+import { IndividualViewComponent } from './individual-view/individual-view.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/workout-view', pathMatch:'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'all-athletes', component:AllAthletesComponent},
   {path:'myhttp', component:MyhttpComponent},
   {path:'add-workout-form', component:AddWorkoutFormComponent},
-  {path:'homepage', component:HomepageComponent}
+  {path:'homepage', component:HomepageComponent},
+  {path:'individual-view', component:IndividualViewComponent}
 ];
 
 @NgModule({

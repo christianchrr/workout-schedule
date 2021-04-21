@@ -4,9 +4,9 @@
     }
 </style>
 <div class="center">
-    <h1 style="width: 500px;"><mat-icon>account_circle</mat-icon><b style="font-size: 28px;"> {{fname}} {{lname}} </b></h1>
+    <h1 style="width: 500px;"><mat-icon>account_circle</mat-icon><b style="font-size: 28px;"> {{fname | titlecase}} {{lname | titlecase}} </b></h1>
     <div><h2 style="width: 500px;"><mat-icon>work_outline</mat-icon> {{role | titlecase}}</h2></div>
-    <div><h3 style="width: 500px;"><mat-icon> email</mat-icon> {{email}}</h3></div>
+    <div><h3 style="width: 500px;"><mat-icon> email</mat-icon> {{email | lowercase}}</h3></div>
     <div *ngIf="changeInfoView, then form else button"></div>
     <ng-template #button>
         <button mat-raised-button color="accent" (click)="changeInfo()"><mat-icon>edit</mat-icon> Edit Info </button>

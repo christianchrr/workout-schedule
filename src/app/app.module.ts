@@ -33,6 +33,7 @@ import { WorkoutViewComponent } from './home/workout-view/workout-view.component
 import { MyhttpComponent } from './services/myhttp.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarService } from './services/navbar.service';
+import { IndividualViewComponent } from './individual-view/individual-view.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { NavbarService } from './services/navbar.service';
     ProfileViewComponent,
     WeeklyCalendarComponent,
     WorkoutViewComponent,
+    IndividualViewComponent,
   ],
   imports: [
     BrowserModule,

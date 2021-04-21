@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private testHttp: NavbarService) { }
 
   athletes: any;
-    ngOnInit(): void {
+
+  ngOnInit(): void {
   }
 
   @Output() loginEvent = new EventEmitter();

@@ -39,9 +39,8 @@ export class AddAthleteFormComponent implements OnInit {
     this.http.addAthlete(this.athlete).subscribe((data:any)=>{
         this.athlete=data;
         this.email.sendEmail(this.athlete).subscribe(data => {
-          console.log(data);   
+          this.router.navigate(['all-athletes'])
         })
-        this.router.navigate(['all-athletes'])
     })
   }
 
