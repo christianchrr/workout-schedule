@@ -37,10 +37,8 @@ export class WorkoutService {
 
   // ----------------------------
 
-  addCompletedWorkout(
-    cworkout:CompleteWorkout
-    ): Observable<CompleteWorkout> {
-    return this.http.post<CompleteWorkout>(this.baseurl+"users/submitcw", cworkout)   
+  addCompletedWorkout(cworkout:CompleteWorkout): Observable<any>{
+    return this.http.post<any>(this.baseurl+"users/submitcw", cworkout)   
   }
 
   getAllCompletedWorkouts(email:string): Observable<Array<CompleteWorkout>> {

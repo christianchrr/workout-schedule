@@ -43,7 +43,7 @@ export class ProfileViewComponent implements OnInit {
 
     this._workouts.getAllCompletedWorkouts(this.user.email).subscribe(data => {
       this.workouts=data;
-      console.log(data);
+     
     })
   }
   

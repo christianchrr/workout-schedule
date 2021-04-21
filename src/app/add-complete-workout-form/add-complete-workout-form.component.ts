@@ -12,7 +12,7 @@ import { WorkoutService } from '../services/workout.service';
 export class AddCompleteWorkoutFormComponent implements OnInit {
   [x: string]: any;
 
-   cworkout = new CompleteWorkout('','','','');
+   cworkout : CompleteWorkout= {id:null, email:'',day:'',workout:'',comments:''};
 
 
   constructor(private _http:WorkoutService, private _user:NavbarService, private router:Router) { }
@@ -25,8 +25,8 @@ export class AddCompleteWorkoutFormComponent implements OnInit {
     console.log(this.cworkout)
 
 
-    this._http.addCompletedWorkout(this.cworkout).subscribe((data:any)=>{
-        this.cworkout=data;
+    this._http.addCompletedWorkout(this.cworkout).subscribe((data)=>{
+        
         console.log(data)
         this.router.navigate(['profile-view'])
     })
