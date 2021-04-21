@@ -57,6 +57,7 @@ public class WWController {
 		return new ResponseEntity<WeeklyWorkouts>(updated, HttpStatus.OK);
 	}
 
+	//===============================================================================================
 	
 	@GetMapping("/compworkouts")
 	public ResponseEntity<List<CompletedWorkouts>> getcomp() {

@@ -46,8 +46,8 @@ export class ProfileViewComponent implements OnInit {
       this.user=data;
       let x:Array<Athlete>=[this.user];
       this._user.setUser(x);
+      this.changeInfo();
     });
-    this.changeInfo();
   }
 
 }
