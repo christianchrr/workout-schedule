@@ -1,12 +1,14 @@
 .view {
     width: 500px;
-    position:relative;
+    position: relative;
+    margin-left: 40%;
     margin-top: 80px;  
 }
 
 mat-icon {
     font-size: 20px;
 }
+
 table {
     width: 100%;
-  }
+}

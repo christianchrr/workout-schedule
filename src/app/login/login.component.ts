@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
   forgot(){
     this.forgotView=!this.forgotView
   }
+  
   sendRequestPW(){
     this.testHttp.recoverPassword(this.recoveryEmail).subscribe(data=>{
       console.log(data);

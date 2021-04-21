@@ -17,15 +17,15 @@ export class AddWorkoutFormComponent implements OnInit {
   id:number=this.workoutUpdate.id
   workout:string=this.workoutUpdate.workout;   
   
-weekdays:string[]=[
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-]
+  weekdays:string[]=[
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ]
 
   constructor(private http:WorkoutService, private router:Router) { }
 
