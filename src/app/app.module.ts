@@ -22,17 +22,18 @@ import {MatTableModule} from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
 
-import { MyhttpComponent } from './myhttp/myhttp.component';
 import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
 
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { WeeklyCalendarComponent } from './home/weekly-calendar/weekly-calendar.component';
 
-import { NavbarService } from './navbar.service';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { WorkoutViewComponent } from './home/workout-view/workout-view.component';
+import { MyhttpComponent } from './services/myhttp.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarService } from './services/navbar.service';
+import { IndividualViewComponent } from './individual-view/individual-view.component';
 
 
 @NgModule({
@@ -43,12 +44,12 @@ import { WorkoutViewComponent } from './home/workout-view/workout-view.component
     AddWorkoutFormComponent,
     AddAthleteFormComponent,
     LoginComponent,
-    
     AllAthletesComponent,
     MyhttpComponent,
     ProfileViewComponent,
     WeeklyCalendarComponent,
-    WorkoutViewComponent
+    WorkoutViewComponent,
+    IndividualViewComponent,
   ],
   imports: [
     BrowserModule,

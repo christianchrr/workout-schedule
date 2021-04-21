@@ -1,6 +1,7 @@
 export class Workout {
     constructor(
-        public title: string,
-        public exercise: string,
+        public id: number,
+        public workout: string,
+        public day: string
     ){}
 }

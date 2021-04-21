@@ -1,0 +1,10 @@
+<style>
+    mat-icon {
+        font-size: 20px;
+    }
+</style>
+<div class="center">
+    <h1 style="width: 500px;"><mat-icon>account_circle</mat-icon><b style="font-size: 28px;"> {{selectedUser.fname | titlecase}} {{selectedUser.lname | titlecase}} </b></h1>
+    <div><h2 style="width: 500px;"><mat-icon>work_outline</mat-icon> {{selectedUser.role | titlecase}}</h2></div>
+    <div><h3 style="width: 500px;"><mat-icon> email</mat-icon> {{selectedUser.email | lowercase}}</h3></div>
+</div>

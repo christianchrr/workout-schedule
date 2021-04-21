@@ -1,7 +1,7 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from '../Models/athlete';
-import { NavbarService } from '../navbar.service';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +10,15 @@ import { NavbarService } from '../navbar.service';
 })
 export class LoginComponent implements OnInit {
 
-eM:string="tevin.gray@revature.net";
-pW:string="password";
+  eM:string="";
+  pW:string="coachpass";
 
-loginWarn:string="";
+  loginWarn:string="";
 
   constructor(private testHttp: NavbarService) { }
-athletes: any;
+
+  athletes: any;
+
   ngOnInit(): void {
   }
 
@@ -27,9 +29,8 @@ athletes: any;
   @Output() userEvent = new EventEmitter();
 
   login(){
-   this.testHttp.GetUserLogin(this.eM,this.pW).subscribe(data=>{
-     console.log(data);
-       this.athletes=data;
+   this.testHttp.GetUserLogin(this.eM,this.pW).subscribe((data:any)=>{
+      this.athletes=data;
       if(this.athletes.length>0){
         this.testHttp.setUser(this.athletes);
         this.userLog=true;

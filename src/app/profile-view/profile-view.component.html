@@ -1,33 +1,41 @@
-
+<style>
+    mat-icon {
+        font-size: 20px;
+    }
+</style>
 <div class="center">
-<h3>{{fname}} {{lname}}</h3>
-<div>Your Role: {{role}}</div>
-<div *ngIf="changeInfoView, then form else button"></div>
-<ng-template #button>
-<button mat-raised-button color="accent" (click)="changeInfo()">Edit Info</button>
-</ng-template>
+    <h1 style="width: 500px;"><mat-icon>account_circle</mat-icon><b style="font-size: 28px;"> {{fname | titlecase}} {{lname | titlecase}} </b></h1>
+    <div><h2 style="width: 500px;"><mat-icon>work_outline</mat-icon> {{role | titlecase}}</h2></div>
+    <div><h3 style="width: 500px;"><mat-icon> email</mat-icon> {{email | lowercase}}</h3></div>
+    <div *ngIf="changeInfoView, then form else button"></div>
+    <ng-template #button>
+        <button mat-raised-button color="accent" (click)="changeInfo()"><mat-icon>edit</mat-icon> Edit Info </button>
+    </ng-template>
 
-<ng-template #form>
-    <form>
-    <div>
-    <mat-form-field>
-        <input matInput type="text" [(ngModel)]="fname" name="fname">
-    </mat-form-field>
-    </div>
-    <div>
-    <mat-form-field>
-        <input matInput type="text" [(ngModel)]="lname" name="lname">
-    </mat-form-field>
-    </div>
-    <div>
-    <mat-form-field>
-        <input matInput type="password" [(ngModel)]="password" name="password">
-    </mat-form-field>
-    </div>
+    <ng-template #form>
+        <form>
+            <div>
+                <mat-form-field style="width: 200px;">
+                    <label>First</label>
+                    <input matInput type="text" [(ngModel)]="fname" name="fname">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field style="width: 200px;">
+                    <label>Last</label>
+                    <input matInput type="text" [(ngModel)]="lname" name="lname">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <label>Password</label>
+                    <input matInput type="password" [(ngModel)]="password" name="password">
+                </mat-form-field>
+            </div>
 
-  <button mat-raised-button color="accent" (click)="update()">Update</button>
-</form>
-<br>
-<button mat-raised-button color="accent" (click)="changeInfo()" >Cancel</button>
+            <button mat-raised-button color="accent" (click)="update()">Update</button>
+        </form>
+        <br/>
+        <button mat-stroked-button (click)="changeInfo()" >Cancel</button>
     </ng-template>
 </div>

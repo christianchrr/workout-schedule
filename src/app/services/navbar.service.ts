@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Athlete } from './Models/athlete';
+import { AthleteService } from './athlete.service';
+import { Athlete } from '../Models/athlete';
 
 @Injectable({
   providedIn: 'root'
@@ -20,29 +21,32 @@ export class NavbarService {
   }
 
 
+  private selectedUser: Athlete= {email:"",fname:'',lname:"",password:"",role:""};
+
+  setSelectedUser(user: Athlete){
+    this.selectedUser= user;
+  }
+  getSelectedUser(): Athlete{ 
+    return this.selectedUser;
+  }
+//=======================================
   private cachedUser: Array<Athlete>=[];
 
   setUser(user: Array<Athlete>){
     this.cachedUser= user;
   }
-  getUser(): Array<Athlete>{
-    console.log(this.cachedUser);
+  getUser(): Array<Athlete>{ 
     return this.cachedUser;
   }
-
+//===========================================
 
   getStuff(): Observable<Athlete>{
     return this.http.get<any>(this.baseurl+'users');
   }
 
-  
-  GetUserLogin(email:string, password:string): Observable<Athlete[]>{
-    this.http.get<any>(this.baseurl+"login/"+email+"/"+password).subscribe(data=>{
-      console.log(data);
-    })
-      return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)
-      
-    }
+  GetUserLogin(email:string, password:string): Observable<Athlete>{ 
+      return this.http.get<any>(this.baseurl+"login/"+email+"/"+password)     
+  }
 
   GetUser(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseurl+"/users")   

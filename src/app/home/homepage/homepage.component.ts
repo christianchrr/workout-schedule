@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Athlete } from 'src/app/Models/athlete';
-import { NavbarService } from 'src/app/navbar.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-homepage',
@@ -17,12 +17,10 @@ export class HomepageComponent implements OnInit {
   view:boolean=false;
 
   ngOnInit(): void {
-        // this.athlete = this.userTransfer;
-        // if(this.athlete[0].role == "coach"){
-         
-        //   this.view=false;
-       
-        // }
+    this.athlete = this.userTransfer;
+    if(this.athlete[0].role == "coach"){        
+      this.view=false;  
+    }
   }
 
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from 'src/app/Models/athlete';
-import { AthleteService } from 'src/app/myhttp/athlete.service';
-import { NavbarService } from 'src/app/navbar.service';
+import { Workout } from 'src/app/Models/workout';
+import { AthleteService } from 'src/app/services/athlete.service';
+import { NavbarService } from 'src/app/services/navbar.service';
+import { WorkoutService } from 'src/app/services/workout.service';
 
 @Component({
   selector: 'app-workout-view',
@@ -11,8 +13,9 @@ import { NavbarService } from 'src/app/navbar.service';
 export class WorkoutViewComponent implements OnInit {
 
   constructor(private _allusers:AthleteService,
-              private _user:NavbarService) { }
-  coaches: Array<Athlete>=[];
+    private workoutservice:WorkoutService,
+    private _user:NavbarService) { }
+  workouts: Array<Workout> = [];
   displayedColumns: String[] = ['day', 'workout']
 
   user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
@@ -20,13 +23,13 @@ export class WorkoutViewComponent implements OnInit {
   userIsCoach:boolean= false;
  
   ngOnInit(): void {
-    this._allusers.GetCoaches().subscribe((data:any)=>{
-      this.coaches=data;
+    this.workoutservice.GetWorkouts().subscribe((data:any)=>{
+      this.workouts=data.sort((a: { id: number; }, b: { id: number; }) => (a.id > b.id) ? 1 : -1);
     })
 
     this.user = this._user.getUser()[0];
 
-    if(this.user.role=="coach"){
+    if(this.user.role == "coach"){
       this.userIsCoach = true;
     }
   }

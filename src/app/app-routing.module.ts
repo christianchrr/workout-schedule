@@ -6,18 +6,21 @@ import { AllAthletesComponent } from './home/all-athletes/all-athletes.component
 import { WorkoutViewComponent } from './home/workout-view/workout-view.component';
 
 
-import { MyhttpComponent } from './myhttp/myhttp.component';
+import { MyhttpComponent } from './services/myhttp.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import { IndividualViewComponent } from './individual-view/individual-view.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/workouts', pathMatch:'full'},
-  {path:'workouts', component:WorkoutViewComponent},
+  {path:'', redirectTo:'/workout-view', pathMatch:'full'},
+  {path:'workout-view', component:WorkoutViewComponent},
   {path:'profile-view', component:ProfileViewComponent},
   {path:'add-athlete-form', component:AddAthleteFormComponent},
   {path:'all-athletes', component:AllAthletesComponent},
   {path:'myhttp', component:MyhttpComponent},
-  {path:'add-workout-form', component:AddWorkoutFormComponent}
-
+  {path:'add-workout-form', component:AddWorkoutFormComponent},
+  {path:'homepage', component:HomepageComponent},
+  {path:'individual-view', component:IndividualViewComponent}
 ];
 
 @NgModule({

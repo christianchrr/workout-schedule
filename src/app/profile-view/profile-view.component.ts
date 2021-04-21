@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Athlete } from '../Models/athlete';
-import { AthleteService } from '../myhttp/athlete.service';
-import { NavbarService } from '../navbar.service';
+import { AthleteService } from '../services/athlete.service';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -11,7 +11,7 @@ import { NavbarService } from '../navbar.service';
 export class ProfileViewComponent implements OnInit {
 
   constructor(private _user:NavbarService,
-              private _update:AthleteService) { }
+    private _update:AthleteService) { }
 
   user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
 
@@ -40,10 +40,12 @@ export class ProfileViewComponent implements OnInit {
 
   update(){
     this.user = {email:this.email,fname:this.fname,lname:this.lname,password:this.password,role:this.user.role}
-    console.log(this.user);
     this._update.UpdateUser(this.user).subscribe((data:any)=>{
       this.user=data;
+      let x:Array<Athlete>=[this.user];
+      this._user.setUser(x);
     });
+    this.changeInfo();
   }
 
 

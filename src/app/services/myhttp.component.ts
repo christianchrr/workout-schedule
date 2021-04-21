@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Athlete } from '../Models/athlete';
 import { AthleteService } from './athlete.service';
 
-
 @Component({
   selector: 'app-myhttp',
   templateUrl: './myhttp.component.html',

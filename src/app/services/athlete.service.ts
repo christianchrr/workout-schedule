@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Athlete } from '../Models/athlete';
-
+import { NavbarService } from './navbar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class AthleteService {
 
   baseurl = 'http://localhost:8086/api/v1/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _user:NavbarService) { }
    // Http Headers
    httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +21,7 @@ export class AthleteService {
   }
   
    // GET
-   GetAthletes(): Observable<Athlete> {
+  GetAthletes(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseurl+"role/athlete")
     .pipe(
       retry(1),
@@ -38,10 +38,7 @@ export class AthleteService {
     )
   }
 
-  UpdateUser(newUser:object): Observable<Athlete> {
-    console.log(newUser);
-    console.log(this.baseurl+"adduser");
-   
+  UpdateUser(newUser:Athlete): Observable<Athlete> { 
     return this.http.put<Athlete>(this.baseurl+"updateuser",newUser).pipe(
       catchError(this.errorHandl)
     )
@@ -49,6 +46,10 @@ export class AthleteService {
 
   addAthlete(user: object): Observable<object> {
     return this.http.post(this.baseurl+"adduser", user)   
+  }
+
+  findByEmail(email: string): Observable<any> {
+    return this.http.get(this.baseurl+"useremail/"+email)   
   }
 
   // Error handling

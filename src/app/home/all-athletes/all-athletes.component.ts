@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Athlete } from 'src/app/Models/athlete';
-import { AthleteService } from 'src/app/myhttp/athlete.service';
-import { NavbarService } from 'src/app/navbar.service';
+import { AthleteService } from 'src/app/services/athlete.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -12,33 +13,37 @@ import { NavbarService } from 'src/app/navbar.service';
 })
 export class AllAthletesComponent implements OnInit {
 
-  constructor(private _allusers:AthleteService,
-              private _user:NavbarService) { }
+  constructor(private _allusers:AthleteService,private _user:NavbarService, private router:Router) { }
   athletes: Array<Athlete>=[];
   coaches: Array<Athlete>=[];
   displayedColumns: String[] = ['role', 'first', 'last', 'email']
  
-  user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
+  user:Athlete={email:'',fname:'',lname:'',password:'',role:''};
+
+  
 
   userIsCoach:boolean= false;
 
   ngOnInit(): void {
     this._allusers.GetAthletes().subscribe((data:any)=>{
-      console.log(data)
-      this.athletes=data;  
+      this.athletes=data 
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
-      this.coaches=data;
+      this.coaches=data
     })
     
     this.user = this._user.getUser()[0];
 
-    if(this.user.role=="coach"){
-      this.userIsCoach = true;
+    if(this.user.role == "coach"){
+      this.userIsCoach = true
     }
-
   }
   
-  
+  profile(email: string) {
+    this._allusers.findByEmail(email).subscribe((data:Athlete)=>{
+      this._user.setSelectedUser(data);
+      this.router.navigate(["individual-view"]);
+    })
+  }
 
 }
