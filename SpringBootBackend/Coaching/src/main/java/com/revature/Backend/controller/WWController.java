@@ -81,7 +81,11 @@ public class WWController {
 				}
 			ostream.close(); 
 			} catch (IOException e) {} catch (DataFormatException d) {}
-			cws.get(i).setImg(ostream.toByteArray());  
+			String template = "data:image/png;base64,"; 
+			String fixing = ostream.toString(); 
+			template.concat(fixing); 
+			cws.get(i).setImg(fixing.getBytes()); 
+			//cws.get(i).setImg(ostream.toByteArray());  
 		}
 		return new ResponseEntity<List<CompletedWorkouts>>(cws, HttpStatus.OK); 
 	}
