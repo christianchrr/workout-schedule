@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Athlete } from '../Models/athlete';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-individual-view',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndividualViewComponent implements OnInit {
 
-  constructor() { }
+  selectedUser:Athlete={email:"",fname:'',lname:"",password:"",role:""};
+
+  constructor(private _user:NavbarService) { }
 
   ngOnInit(): void {
+    this.selectedUser = this._user.getSelectedUser();
   }
 
 }

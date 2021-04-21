@@ -1,1 +1,5 @@
-<p>individual-view works!</p>
+<div class="view">
+    <h1><mat-icon>account_circle</mat-icon><b style="font-size: 28px;"> {{selectedUser.fname | titlecase}} {{selectedUser.lname | titlecase}} </b></h1>
+    <div><h2><mat-icon>work_outline</mat-icon> {{selectedUser.role | titlecase}}</h2></div>
+    <div><h3><mat-icon> email</mat-icon> {{selectedUser.email | lowercase}}</h3></div>
+</div>

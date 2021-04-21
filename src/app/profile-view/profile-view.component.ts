@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Athlete } from '../Models/athlete';
 import { AthleteService } from '../services/athlete.service';
 import { NavbarService } from '../services/navbar.service';
@@ -11,7 +12,8 @@ import { NavbarService } from '../services/navbar.service';
 export class ProfileViewComponent implements OnInit {
 
   constructor(private _user:NavbarService,
-    private _update:AthleteService) { }
+    private _update:AthleteService,
+    private router:Router) { }
 
   user:Athlete={email:"",fname:'',lname:"",password:"",role:""};
 
@@ -42,9 +44,8 @@ export class ProfileViewComponent implements OnInit {
     this.user = {email:this.email,fname:this.fname,lname:this.lname,password:this.password,role:this.user.role}
     this._update.UpdateUser(this.user).subscribe((data:any)=>{
       this.user=data;
+      this.router.navigate(['profile-view']);
     });
   }
-
-
 
 }

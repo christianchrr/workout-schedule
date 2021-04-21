@@ -21,15 +21,25 @@ export class NavbarService {
   }
 
 
+  private selectedUser: Athlete= {email:"",fname:'',lname:"",password:"",role:""};
+
+  setSelectedUser(user: Athlete){
+    this.selectedUser= user;
+  }
+  getSelectedUser(): Athlete{ 
+    return this.selectedUser;
+  }
+//=======================================
   private cachedUser: Array<Athlete>=[];
 
   setUser(user: Array<Athlete>){
     this.cachedUser= user;
   }
+  
   getUser(): Array<Athlete>{ 
     return this.cachedUser;
   }
-
+//===========================================
 
   getStuff(): Observable<Athlete>{
     return this.http.get<any>(this.baseurl+'users');
