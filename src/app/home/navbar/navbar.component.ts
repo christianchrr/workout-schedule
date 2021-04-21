@@ -15,4 +15,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+    window.location.href="http://localhost:4200/";
+  }
 }
