@@ -36,6 +36,7 @@ import { NavbarService } from './services/navbar.service';
 import { IndividualViewComponent } from './individual-view/individual-view.component';
 import { AddCompleteWorkoutFormComponent } from './add-complete-workout-form/add-complete-workout-form.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ForgotPWComponent } from './Forms/forgot-pw/forgot-pw.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     WorkoutViewComponent,
     IndividualViewComponent,
     AddCompleteWorkoutFormComponent,
+    ForgotPWComponent,
   ],
   imports: [
     BrowserModule,

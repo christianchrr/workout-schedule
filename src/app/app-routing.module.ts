@@ -10,6 +10,7 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { IndividualViewComponent } from './individual-view/individual-view.component';
 import { AddCompleteWorkoutFormComponent } from './add-complete-workout-form/add-complete-workout-form.component';
+import { ForgotPWComponent } from './Forms/forgot-pw/forgot-pw.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/workout-view', pathMatch:'full'},

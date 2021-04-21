@@ -29,6 +29,8 @@ export class ProfileViewComponent implements OnInit {
 
   workouts: Array<CompleteWorkout> = [];
 
+  
+
   ngOnInit(): void {
     this.user = this._user.getUser()[0];
 
@@ -39,7 +41,7 @@ export class ProfileViewComponent implements OnInit {
     this.role = this.user.role;
 
 
-    this._workouts.getAllCompletedWorkouts().subscribe(data => {
+    this._workouts.getAllCompletedWorkouts(this.user.email).subscribe(data => {
       this.workouts=data;
       console.log(data);
     })
