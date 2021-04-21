@@ -42,6 +42,19 @@ export class LoginComponent implements OnInit {
   }
 
 
+  forgotView:boolean = false;
+
+  recoveryEmail:string = ''
+
+  forgot(){
+    this.forgotView=!this.forgotView
+  }
+  sendRequestPW(){
+    this.testHttp.recoverPassword(this.recoveryEmail).subscribe(data=>{
+      console.log(data);
+    })
+    this.forgot();
+  }
 
 
 }

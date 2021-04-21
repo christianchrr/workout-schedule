@@ -12,7 +12,10 @@
 </style>
 
 <div class="center">
+ 
+
     <h1 class="header">Login</h1>
+  <div *ngIf=!forgotView>
     <form>
     <div>
       <mat-form-field style="width: 200px;">
@@ -27,5 +30,16 @@
     <button mat-raised-button color="accent" (click)="login()" (submit)="login()" routerLink="/workout-view">Login</button>
   </form>
   <br/>
-  <a>Forgot Password?</a>
+  <a (click)="forgot()">Forgot Password?</a>
+  </div>
+  <div *ngIf=forgotView>
+    <form>
+      <div>
+        <mat-form-field style="width: 200px;">
+          <input matInput type="text" [(ngModel)]="recoveryEmail" name="recoveryEmail" placeholder="email@email.com" required>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="accent" (click)="sendRequestPW()" (submit)="sendRequestPW()">send</button>
+    </form>
+  </div>
 </div>

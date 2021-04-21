@@ -28,12 +28,15 @@ import { AllAthletesComponent } from './home/all-athletes/all-athletes.component
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { WeeklyCalendarComponent } from './home/weekly-calendar/weekly-calendar.component';
 
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { WorkoutViewComponent } from './home/workout-view/workout-view.component';
 import { MyhttpComponent } from './services/myhttp.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarService } from './services/navbar.service';
 import { IndividualViewComponent } from './individual-view/individual-view.component';
+import { AddCompleteWorkoutFormComponent } from './add-complete-workout-form/add-complete-workout-form.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ForgotPWComponent } from './Forms/forgot-pw/forgot-pw.component';
 
 
 @NgModule({
@@ -50,6 +53,8 @@ import { IndividualViewComponent } from './individual-view/individual-view.compo
     WeeklyCalendarComponent,
     WorkoutViewComponent,
     IndividualViewComponent,
+    AddCompleteWorkoutFormComponent,
+    ForgotPWComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,8 @@ import { IndividualViewComponent } from './individual-view/individual-view.compo
     MatInputModule,
     HttpClientModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MaterialFileInputModule
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]

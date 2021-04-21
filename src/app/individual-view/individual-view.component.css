@@ -1,0 +1,9 @@
+.view {
+    width: 500px;
+    position:relative;
+    margin-top: 80px;  
+}
+
+mat-icon {
+    font-size: 20px;
+}

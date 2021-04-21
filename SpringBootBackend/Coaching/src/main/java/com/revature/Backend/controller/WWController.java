@@ -57,6 +57,7 @@ public class WWController {
 		return new ResponseEntity<WeeklyWorkouts>(updated, HttpStatus.OK);
 	}
 
+	//===============================================================================================
 	
 	@GetMapping("/compworkouts")
 	public ResponseEntity<List<CompletedWorkouts>> getcomp() {
@@ -85,7 +86,7 @@ public class WWController {
 			String fixing = ostream.toString(); 
 			template.concat(fixing); 
 			cws.get(i).setImg(fixing.getBytes()); 
-			//cws.get(i).setImg(ostream.toByteArray());  
+			//cws.get(i).setImg(ostream.toByteArray());     
 		}
 		return new ResponseEntity<List<CompletedWorkouts>>(cws, HttpStatus.OK); 
 	}

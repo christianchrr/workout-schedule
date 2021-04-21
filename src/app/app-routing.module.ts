@@ -5,11 +5,12 @@ import { AddWorkoutFormComponent } from './Forms/add-workout-form/add-workout-fo
 import { AllAthletesComponent } from './home/all-athletes/all-athletes.component';
 import { WorkoutViewComponent } from './home/workout-view/workout-view.component';
 
-
 import { MyhttpComponent } from './services/myhttp.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { IndividualViewComponent } from './individual-view/individual-view.component';
+import { AddCompleteWorkoutFormComponent } from './add-complete-workout-form/add-complete-workout-form.component';
+import { ForgotPWComponent } from './Forms/forgot-pw/forgot-pw.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/workout-view', pathMatch:'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'myhttp', component:MyhttpComponent},
   {path:'add-workout-form', component:AddWorkoutFormComponent},
   {path:'homepage', component:HomepageComponent},
-  {path:'individual-view', component:IndividualViewComponent}
+  {path:'individual-view', component:IndividualViewComponent},
+  {path:'add-complete-workout-form', component:AddCompleteWorkoutFormComponent}
 ];
 
 @NgModule({

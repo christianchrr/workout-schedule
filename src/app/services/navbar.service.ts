@@ -35,6 +35,7 @@ export class NavbarService {
   setUser(user: Array<Athlete>){
     this.cachedUser= user;
   }
+  
   getUser(): Array<Athlete>{ 
     return this.cachedUser;
   }
@@ -50,6 +51,12 @@ export class NavbarService {
 
   GetUser(): Observable<Athlete> {
     return this.http.get<Athlete>(this.baseurl+"/users")   
+  }
+
+  //==============================================
+
+  recoverPassword(email:string): Observable<any>{
+    return this.http.post<any>(this.baseurl+'recovery', email);
   }
 
   errorHandl(error:any) {
