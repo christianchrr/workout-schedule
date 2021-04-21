@@ -48,6 +48,7 @@ public class CoachingController {
 
 	@PostMapping("/adduser")
 	public ResponseEntity<User> save(@RequestBody User user) {
+		user.setEmail(user.getEmail().toLowerCase());
 		User athlete = service.addAthlete(user);
 		return new ResponseEntity<User>(athlete, HttpStatus.OK);
 	}

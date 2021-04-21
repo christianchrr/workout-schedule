@@ -72,7 +72,7 @@ public class EmailSender {
                 MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
                 StandardCharsets.UTF_8.name());
         
-        String password = repo.recoverPass(user.getEmail()); 
+        String password = repo.recoverPass(user.getEmail().toLowerCase()); 
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("password", password);
 

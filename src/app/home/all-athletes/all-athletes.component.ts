@@ -20,13 +20,11 @@ export class AllAthletesComponent implements OnInit {
  
   user:Athlete={email:'',fname:'',lname:'',password:'',role:''};
 
-  
-
   userIsCoach:boolean= false;
 
   ngOnInit(): void {
     this._allusers.GetAthletes().subscribe((data:any)=>{
-      this.athletes=data 
+      this.athletes=data
   })
     this._allusers.GetCoaches().subscribe((data:any)=>{
       this.coaches=data
