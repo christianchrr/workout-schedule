@@ -2,6 +2,14 @@
 Coaches' App allows an easy way for coaches to assign practive workouts to their team without having in person practice. Coaches can log in, add athletes to the team, create weekly workouts, and edit their profiles. Athletes can log in, edit their profiles, view weekly workouts, and log their workouts.
 
 # Technologies Used
+- Angular 10
+- Angular Materials
+- Spring MVC.
+- Hibernate.
+- Angular.
+- Java Mail.
+- AWS and ARDS
+
 
 # Features
 Coaches:
