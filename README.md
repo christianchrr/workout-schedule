@@ -1,5 +1,22 @@
+# Description
+Coaches' App allows an easy way for coaches to assign practive workouts to their team without having in person practice. Coaches can log in, add athletes to the team, create weekly workouts, and edit their profiles. Athletes can log in, edit their profiles, view weekly workouts, and log their workouts.
+
 # Technologies Used
 
+# Features
+Coaches:
+- Log in
+- Update weekly workouts
+- Add atheltes
+- View all athletes and coaches
+- View weekly workouts
+- Edit Profile
+Atheltes:
+- Log in
+- Edit profile
+- View all athletes and coaches
+- View weekly workouts
+- Log their own workouts
 
 # Coaches'  App
 
