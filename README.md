@@ -11,7 +11,8 @@ Coaches:
 - View all athletes and coaches
 - View weekly workouts
 - Edit Profile
-Atheltes:
+
+Athletes:
 - Log in
 - Edit profile
 - View all athletes and coaches
